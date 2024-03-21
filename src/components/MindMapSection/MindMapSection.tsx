@@ -7,7 +7,6 @@ const MindMapSection: FC = () => {
   return (
     <section>
       <SectionTitle title='MIND map' />
-      <div className='slide-container'></div>
       {/* <CardsList>
         <Card>
           <p>
