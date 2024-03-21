@@ -1,24 +1,25 @@
 import { FC } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import {
-  Accent,
   Section,
   Subtitle,
   Text,
   TextWrap,
-  Title,
   TitleWrap,
 } from './StorySection.styles';
 import mobileImg from '@/images/storySection/mobileBgImage.png';
 import tabletImg from '@/images/storySection/tabletBgImage.png';
 import desktopImg from '@/images/storySection/desktopBgImage.png';
+import SectionTitle from '../SectionTitle';
 
 const StorySection: FC = () => (
   <Section mobileImg={mobileImg} tabletImg={tabletImg} desktopImg={desktopImg}>
     <TitleWrap>
-      <Title>
-        a Story that started with <Accent>one simple ape</Accent>
-      </Title>
+      <SectionTitle
+        title='a Story that started with'
+        accent='one simple ape'
+        textAlign='left'
+      />
       <Subtitle>
         WHO GOT FED UP WITH BORING AND HYPOCRITIC COMMONPLACE THIS IS HOW THE
         IDEA OF ESCAPING AND DYNAMIC JOURNEY ON THE YACHT

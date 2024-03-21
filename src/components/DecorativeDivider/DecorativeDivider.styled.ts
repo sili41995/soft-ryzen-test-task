@@ -35,6 +35,7 @@ export const Subtitle = styled.p`
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
+  white-space: nowrap;
 
   @media screen and (min-width: 1280px) {
     font-size: 64px;

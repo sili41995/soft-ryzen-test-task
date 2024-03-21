@@ -34,27 +34,6 @@ export const TitleWrap = styled.div`
   }
 `;
 
-export const Title = styled.h2`
-  color: ${({ theme }) => theme.colors.white};
-  font-family: Right Grotesk;
-  font-size: 40px;
-  font-weight: 900;
-  line-height: 1;
-  text-transform: uppercase;
-
-  @media screen and (min-width: 768px) {
-    font-size: 60px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    font-size: 120px;
-  }
-`;
-
-export const Accent = styled.span`
-  color: ${({ theme }) => theme.colors.accent};
-`;
-
 export const Subtitle = styled.p`
   color: ${({ theme }) => theme.colors.white};
   font-family: Messina Sans Mono;

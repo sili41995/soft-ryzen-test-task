@@ -1,5 +1,6 @@
 import Container from '@/components/Container';
 import DecorativeDivider from '@/components/DecorativeDivider';
+import MindMapSection from '@/components/MindMapSection';
 import StorySection from '@/components/StorySection';
 import { FC } from 'react';
 
@@ -10,6 +11,9 @@ const HomePage: FC = () => {
         <StorySection />
       </Container>
       <DecorativeDivider />
+      <Container>
+        <MindMapSection />
+      </Container>
     </>
   );
 };
