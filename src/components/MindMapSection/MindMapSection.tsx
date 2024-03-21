@@ -41,7 +41,13 @@ const MindMapSection: FC = () => {
     >
       <Card>
         <Arrow />
-        <CardTitle>Token</CardTitle>
+        <CardTitle>
+          Learn
+          <br />
+          more
+          <br />
+          in mind map
+        </CardTitle>
       </Card>
     </Link>,
   ];
