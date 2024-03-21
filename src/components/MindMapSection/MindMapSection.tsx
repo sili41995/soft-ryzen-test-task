@@ -35,9 +35,9 @@ const MindMapSection: FC = () => {
       <CardTitle>Token</CardTitle>
     </Card>,
     <Link
+      href='https://github.com/sili41995'
       target='_blank'
       rel='noreferrer noopener'
-      href='https://github.com/sili41995'
     >
       <Card>
         <Arrow />

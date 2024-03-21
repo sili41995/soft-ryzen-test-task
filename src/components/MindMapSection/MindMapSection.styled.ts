@@ -16,9 +16,8 @@ export const Section = styled.section`
 `;
 
 export const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  align-content: space-between;
   min-height: 242px;
   background-color: #1e1e1e;
   border-radius: 12px;
