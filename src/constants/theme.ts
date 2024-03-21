@@ -7,6 +7,7 @@ interface ITheme {
     body: string;
     accent: string;
     white: string;
+    cardBg: string;
   };
   // fontWeight: { };
   // fontSize: {  };
@@ -27,6 +28,7 @@ const theme: ITheme = {
     body: '#171717',
     accent: '#DC3B5A',
     white: '#FFFFFF',
+    cardBg: '#1e1e1e',
   },
   // fontWeight: {
   // },

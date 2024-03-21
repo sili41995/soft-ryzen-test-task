@@ -19,7 +19,7 @@ export const Card = styled.div`
   display: grid;
   align-content: space-between;
   min-height: 242px;
-  background-color: #1e1e1e;
+  background-color: ${({ theme }) => theme.colors.cardBg};
   border-radius: 12px;
   padding: ${({ theme }) => `${theme.spacing(6)} ${theme.spacing(3)}`};
   color: ${({ theme }) => theme.colors.white};
