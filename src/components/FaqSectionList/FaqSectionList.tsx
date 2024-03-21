@@ -30,9 +30,9 @@ const FaqSectionList: FC<IProps> = ({ faqSectionCards }) => {
             onClick={onCardClick}
           >
             {isActiveCard && <Image src={avatar} alt='card avatar' />}
-            <Number>{cardNumber}</Number>
+            <Number isActiveCard={isActiveCard}>{cardNumber}</Number>
             <TitleWrap>
-              <Title>{title}</Title>
+              <Title isActiveCard={isActiveCard}>{title}</Title>
               {isActiveCard && <Description>{description}</Description>}
             </TitleWrap>
           </ListItem>

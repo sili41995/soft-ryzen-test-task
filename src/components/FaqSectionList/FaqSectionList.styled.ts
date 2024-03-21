@@ -24,15 +24,28 @@ export const ListItem = styled.li<IStyledProps>`
   background-color: ${({ theme, isActiveCard }) =>
     isActiveCard && theme.colors.cardBg};
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(2)}`} 10px;
+  padding-bottom: ${({ theme, isActiveCard }) =>
+    isActiveCard ? '10px' : theme.spacing(2)};
 
   @media screen and (min-width: 768px) {
     border-radius: 16px;
     padding: 18px ${({ theme }) => theme.spacing(4)};
+    padding-bottom: ${({ isActiveCard }) => (isActiveCard ? '23px' : '18px')};
   }
 
   @media screen and (min-width: 1280px) {
     border-radius: 24px;
     padding: ${({ theme }) => theme.spacing(6)};
+  }
+
+  &:is(:hover, :focus) {
+    & > p {
+      color: ${({ theme }) => theme.colors.white};
+    }
+
+    & > div > p:first-of-type {
+      color: ${({ theme }) => theme.colors.accent};
+    }
   }
 `;
 
@@ -42,13 +55,15 @@ export const Image = styled.img`
   }
 `;
 
-export const Number = styled.p`
+export const Number = styled.p<IStyledProps>`
   flex-shrink: 0;
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme, isActiveCard }) =>
+    isActiveCard ? theme.colors.white : theme.colors.accent};
   font-family: Biro Script Plus;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.67;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -63,13 +78,15 @@ export const Number = styled.p`
 
 export const TitleWrap = styled.div``;
 
-export const Title = styled.p`
-  color: ${({ theme }) => theme.colors.white};
+export const Title = styled.p<IStyledProps>`
+  color: ${({ theme, isActiveCard }) =>
+    isActiveCard ? theme.colors.accent : theme.colors.white};
   font-family: Right Grotesk;
   font-size: 20px;
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 
   @media screen and (min-width: 768px) {
     font-size: 32px;
