@@ -24,6 +24,38 @@ export const Section = styled.section<IStyledProps>`
 export const TitleWrap = styled.div`
   display: flex;
 
+  & > h2 {
+    color: ${({ theme }) => theme.colors.white};
+    font-family: Right Grotesk;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 768px) {
+      font-size: 60px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      font-size: 120px;
+    }
+  }
+
+  & > p {
+    color: ${({ theme }) => theme.colors.white};
+    font-family: Messina Sans Mono;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.19;
+    text-transform: uppercase;
+    text-align: right;
+
+    @media screen and (min-width: 1280px) {
+      font-size: 24px;
+      line-height: 1.21;
+    }
+  }
+
   @media screen and (max-width: 767px) {
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing(4)};
@@ -34,18 +66,37 @@ export const TitleWrap = styled.div`
   }
 `;
 
-export const Subtitle = styled.p`
-  color: ${({ theme }) => theme.colors.white};
-  font-family: Messina Sans Mono;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.19;
-  text-transform: uppercase;
-  text-align: right;
+export const MobileTitle = styled.h2`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const Title = styled.h2`
+  width: 269px;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 
   @media screen and (min-width: 1280px) {
-    font-size: 24px;
-    line-height: 1.21;
+    width: 538px;
+  }
+`;
+
+export const Accent = styled.span`
+  color: ${({ theme }) => theme.colors.accent};
+`;
+
+export const MobileSubtitle = styled.p`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const Subtitle = styled.p`
+  @media screen and (max-width: 767px) {
+    display: none;
   }
 `;
 

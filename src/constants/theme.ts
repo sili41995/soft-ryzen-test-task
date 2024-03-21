@@ -24,7 +24,7 @@ interface ITheme {
 
 const theme: ITheme = {
   colors: {
-    body: '#4A4A4A',
+    body: '#171717',
     accent: '#DC3B5A',
     white: '#FFFFFF',
   },
