@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import { IProps } from './FaqSectionList.types';
 import {
+  Card,
   Description,
   Image,
   List,
@@ -24,17 +25,15 @@ const FaqSectionList: FC<IProps> = ({ faqSectionCards }) => {
         };
 
         return (
-          <ListItem
-            isActiveCard={isActiveCard}
-            key={index}
-            onClick={onCardClick}
-          >
-            {isActiveCard && <Image src={avatar} alt='card avatar' />}
-            <Number isActiveCard={isActiveCard}>{cardNumber}</Number>
-            <TitleWrap>
-              <Title isActiveCard={isActiveCard}>{title}</Title>
-              {isActiveCard && <Description>{description}</Description>}
-            </TitleWrap>
+          <ListItem key={index}>
+            <Card isActiveCard={isActiveCard} onClick={onCardClick}>
+              {isActiveCard && <Image src={avatar} alt='card avatar' />}
+              <Number isActiveCard={isActiveCard}>{cardNumber}</Number>
+              <TitleWrap>
+                <Title isActiveCard={isActiveCard}>{title}</Title>
+                {isActiveCard && <Description>{description}</Description>}
+              </TitleWrap>
+            </Card>
           </ListItem>
         );
       })}

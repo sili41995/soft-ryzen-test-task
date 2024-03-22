@@ -17,15 +17,24 @@ export const List = styled.ul`
   }
 `;
 
-export const ListItem = styled.li<IStyledProps>`
+export const ListItem = styled.li`
+  width: 100%;
+`;
+
+export const Card = styled.button<IStyledProps>`
+  position: relative;
   display: flex;
+  justify-content: flex-end;
   gap: ${({ theme }) => theme.spacing(2)};
+  width: 100%;
+  border: none;
   border-radius: 12px;
   background-color: ${({ theme, isActiveCard }) =>
-    isActiveCard && theme.colors.cardBg};
+    isActiveCard ? theme.colors.cardBg : 'transparent'};
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(2)}`} 10px;
   padding-bottom: ${({ theme, isActiveCard }) =>
     isActiveCard ? '10px' : theme.spacing(2)};
+  text-align: left;
 
   @media screen and (min-width: 768px) {
     border-radius: 16px;
@@ -50,8 +59,23 @@ export const ListItem = styled.li<IStyledProps>`
 `;
 
 export const Image = styled.img`
+  position: absolute;
+  left: 19px;
+  top: 50%;
+  width: 148px;
+  height: 183px;
+  border-radius: 16px;
+  transform: translateY(-50%) rotate(-16deg);
+
   @media screen and (max-width: 767px) {
     display: none;
+  }
+
+  @media screen and (min-width: 1280px) {
+    left: 16px;
+    transform: translateY(-50%) rotate(-8deg);
+    width: 248px;
+    height: 282px;
   }
 `;
 
@@ -76,7 +100,15 @@ export const Number = styled.p<IStyledProps>`
   }
 `;
 
-export const TitleWrap = styled.div``;
+export const TitleWrap = styled.div`
+  @media screen and (min-width: 768px) {
+    width: 339px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 635px;
+  }
+`;
 
 export const Title = styled.p<IStyledProps>`
   color: ${({ theme, isActiveCard }) =>
