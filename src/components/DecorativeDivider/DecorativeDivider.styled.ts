@@ -1,12 +1,26 @@
 import styled from '@emotion/styled';
 
-export const List = styled.ul`
-  display: flex;
-  justify-content: center;
-  gap: ${({ theme }) => theme.spacing(6)};
+export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.accent};
   padding-top: 6px;
   padding-bottom: 9px;
+`;
+
+export const List = styled.ul`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(6)};
+  padding-left: 100%;
+  animation: text 8s infinite linear;
+
+  @keyframes text {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(-160%, 0);
+    }
+  }
 
   @media screen and (min-width: 768px) {
     padding-bottom: 10px;
