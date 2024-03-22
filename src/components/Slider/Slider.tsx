@@ -6,13 +6,13 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import SliderControls from '@/components/SliderControls';
 import { ClassNames } from '@/constants';
 
-const Slider: FC<IProps> = ({ cards }) => {
+const Slider: FC<IProps> = ({ cards, slidesPerView }) => {
   return (
     <>
       <Swiper
         className={ClassNames.slider}
         spaceBetween={24}
-        slidesPerView={1}
+        slidesPerView={slidesPerView}
         navigation
         modules={[Navigation, Pagination, Scrollbar, A11y]}
       >

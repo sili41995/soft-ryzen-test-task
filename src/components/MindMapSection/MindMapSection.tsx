@@ -55,7 +55,7 @@ const MindMapSection: FC = () => {
   return (
     <Section>
       <SectionTitle title='MIND map' />
-      <Slider cards={cards} />
+      <Slider cards={cards} slidesPerView={1} />
       <CardsList cards={cards} />
     </Section>
   );
