@@ -10,7 +10,7 @@ export const List = styled.ul`
   display: flex;
   gap: ${({ theme }) => theme.spacing(6)};
   padding-left: 100%;
-  animation: text 8s infinite linear;
+  animation: text 10s infinite linear;
 
   @keyframes text {
     0% {
@@ -18,17 +18,37 @@ export const List = styled.ul`
     }
 
     100% {
-      transform: translate(-160%, 0);
+      transform: translate(-400%, 0);
     }
   }
 
   @media screen and (min-width: 768px) {
     padding-bottom: 10px;
+
+    @keyframes text {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(-250%, 0);
+      }
+    }
   }
 
   @media screen and (min-width: 1280px) {
     gap: ${({ theme }) => theme.spacing(9)};
     padding-bottom: ${({ theme }) => theme.spacing(4)};
+
+    @keyframes text {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(-200%, 0);
+      }
+    }
   }
 `;
 
