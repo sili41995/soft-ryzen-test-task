@@ -1,7 +1,7 @@
 import { FC, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Loader from '@/components/Loader';
-import { Header, Main } from './SharedLayout.styled';
+import { Copyright, Footer, Header, Main } from './SharedLayout.styled';
 import Container from '@/components/Container';
 
 const SharedLayout: FC = () => (
@@ -16,6 +16,11 @@ const SharedLayout: FC = () => (
         <Outlet />
       </Suspense>
     </Main>
+    <Footer>
+      <Container>
+        <Copyright>© Yacht ape 2024 all rights reserved</Copyright>
+      </Container>
+    </Footer>
   </>
 );
 
