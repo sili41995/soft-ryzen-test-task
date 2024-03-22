@@ -1,3 +1,5 @@
+import { MouseEvent } from 'react';
+
 export interface IFaqSectionCard {
   title: string;
   description: string;
@@ -14,3 +16,15 @@ export interface IMindMapSectionCard {
 }
 
 export type MindMapSectionCards = Readonly<IMindMapSectionCard[]>;
+
+export interface ICredentials {
+  username: string;
+  walletAddress: string;
+}
+
+export interface IRegExp {
+  username: RegExp;
+  walletAddress: RegExp;
+}
+
+export type BtnClickEvent = MouseEvent<HTMLButtonElement>;

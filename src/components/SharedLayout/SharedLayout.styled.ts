@@ -8,6 +8,6 @@ export const Header = styled.header`
 `;
 
 export const Main = styled.main`
+  min-height: 100vh;
   background-color: ${({ theme }) => theme.colors.body};
-  overflow-x: hidden;
 `;
