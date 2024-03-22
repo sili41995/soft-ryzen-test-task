@@ -5,6 +5,10 @@ export const List = styled.ul`
   justify-content: center;
   gap: ${({ theme }) => theme.spacing(12)};
   margin-top: ${({ theme }) => theme.spacing(6)};
+
+  @media screen and (min-width: 1280px) {
+    margin-top: ${({ theme }) => theme.spacing(12)};
+  }
 `;
 
 export const ListItem = styled.li``;

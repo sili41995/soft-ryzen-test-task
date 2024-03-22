@@ -5,3 +5,12 @@ export interface IFaqSectionCard {
 }
 
 export type FaqSectionCards = Readonly<IFaqSectionCard[]>;
+
+export type ArtsSectionCards = Readonly<string[]>;
+
+export interface IMindMapSectionCard {
+  title: string;
+  text: string;
+}
+
+export type MindMapSectionCards = Readonly<IMindMapSectionCard[]>;

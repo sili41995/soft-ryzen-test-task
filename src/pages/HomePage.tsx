@@ -1,3 +1,5 @@
+import ArtsSection from '@/components/ArtsSection';
+import ContactUsSection from '@/components/ContactUsSection';
 import Container from '@/components/Container';
 import DecorativeDivider from '@/components/DecorativeDivider';
 import FaqSection from '@/components/FaqSection';
@@ -15,6 +17,8 @@ const HomePage: FC = () => {
       <Container>
         <MindMapSection />
         <FaqSection />
+        <ArtsSection />
+        <ContactUsSection />
       </Container>
     </>
   );

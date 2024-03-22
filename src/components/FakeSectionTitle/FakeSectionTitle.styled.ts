@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Title = styled.h2`
+export const Title = styled.p`
   color: ${({ theme }) => theme.colors.white};
   font-family: Right Grotesk;
   font-size: 40px;
@@ -16,4 +16,8 @@ export const Title = styled.h2`
   @media screen and (min-width: 1280px) {
     font-size: 120px;
   }
+`;
+
+export const Accent = styled.span`
+  color: ${({ theme }) => theme.colors.accent};
 `;

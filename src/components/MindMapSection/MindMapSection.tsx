@@ -10,30 +10,16 @@ import {
 } from './MindMapSection.styled';
 import Arrow from '@/icons/up-right-arrow.svg?react';
 import CardsList from '../CardsList';
+import { ClassNames, mindMapSectionCards } from '@/constants';
 
 const MindMapSection: FC = () => {
   const cards = [
-    <Card>
-      <CardText>
-        All owners of APE NFTs and all future collections will receive a
-        percentage of sales based on the number of NFTs they own
-      </CardText>
-      <CardTitle>YAPE DROP</CardTitle>
-    </Card>,
-    <Card>
-      <CardText>
-        Launch of the 2nd YACHT Collection Releasing the first version of the
-        Ape Slam Game
-      </CardText>
-      <CardTitle>New Collection</CardTitle>
-    </Card>,
-    <Card>
-      <CardText>
-        Launch your own token, the proceeds of which will go to a global fund to
-        LAUNCH YACHT CLUB AND PROMOTE it
-      </CardText>
-      <CardTitle>Token</CardTitle>
-    </Card>,
+    ...mindMapSectionCards.map(({ text, title }) => (
+      <Card key={title}>
+        <CardText>{text}</CardText>
+        <CardTitle>{title}</CardTitle>
+      </Card>
+    )),
     <Link
       href='https://github.com/sili41995'
       target='_blank'
@@ -55,7 +41,7 @@ const MindMapSection: FC = () => {
   return (
     <Section>
       <SectionTitle title='MIND map' />
-      <Slider cards={cards} slidesPerView={1} />
+      <Slider cards={cards} slidesPerView={1} className={ClassNames.slider} />
       <CardsList cards={cards} />
     </Section>
   );

@@ -1,12 +1,7 @@
 import { FC } from 'react';
-import { Accent, Title } from './SectionTitle.styled';
+import { Title } from './SectionTitle.styled';
 import { IProps } from './SectionTitle.types';
 
-const SectionTitle: FC<IProps> = ({ title, accent, textAlign = 'center' }) => (
-  <Title textAlign={textAlign}>
-    {title}
-    {accent && <Accent>{` ${accent}`}</Accent>}
-  </Title>
-);
+const SectionTitle: FC<IProps> = ({ title }) => <Title>{title}</Title>;
 
 export default SectionTitle;
