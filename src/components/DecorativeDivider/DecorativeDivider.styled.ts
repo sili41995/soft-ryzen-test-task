@@ -4,6 +4,14 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.accent};
   padding-top: 6px;
   padding-bottom: 9px;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 10px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-bottom: ${({ theme }) => theme.spacing(4)};
+  }
 `;
 
 export const List = styled.ul`
@@ -23,8 +31,6 @@ export const List = styled.ul`
   }
 
   @media screen and (min-width: 768px) {
-    padding-bottom: 10px;
-
     @keyframes text {
       0% {
         transform: translate(0, 0);
@@ -38,7 +44,6 @@ export const List = styled.ul`
 
   @media screen and (min-width: 1280px) {
     gap: ${({ theme }) => theme.spacing(9)};
-    padding-bottom: ${({ theme }) => theme.spacing(4)};
 
     @keyframes text {
       0% {
