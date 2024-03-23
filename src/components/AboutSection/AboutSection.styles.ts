@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './StorySection.types';
+import { IStyledProps } from './AboutSection.types';
 
-export const Section = styled.section<IStyledProps>`
+export const Section = styled.section``;
+
+export const ContentWrap = styled.div<IStyledProps>`
   padding-top: ${({ theme }) => theme.spacing(15)};
   padding-bottom: ${({ theme }) => theme.spacing(83)};
   background-repeat: no-repeat;
@@ -24,7 +26,7 @@ export const Section = styled.section<IStyledProps>`
 export const TitleWrap = styled.div`
   display: flex;
 
-  & > h2 {
+  & > h3 {
     color: ${({ theme }) => theme.colors.white};
     font-family: Right Grotesk;
     font-size: 40px;
@@ -66,13 +68,13 @@ export const TitleWrap = styled.div`
   }
 `;
 
-export const MobileTitle = styled.h2`
+export const MobileTitle = styled.h3`
   @media screen and (min-width: 768px) {
     display: none;
   }
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h3`
   width: 269px;
 
   @media screen and (max-width: 767px) {

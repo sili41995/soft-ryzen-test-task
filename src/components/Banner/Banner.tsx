@@ -1,14 +1,9 @@
 import { FC } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { decorativeSubtitles } from '@/constants';
-import {
-  Container,
-  List,
-  ListItem,
-  Subtitle,
-} from './DecorativeDivider.styled';
+import { Container, List, ListItem, Subtitle } from './Banner.styled';
 
-const DecorativeDivider: FC = () => (
+const Banner: FC = () => (
   <Container>
     <List>
       {decorativeSubtitles.map((subtitle) => (
@@ -21,4 +16,4 @@ const DecorativeDivider: FC = () => (
   </Container>
 );
 
-export default DecorativeDivider;
+export default Banner;
