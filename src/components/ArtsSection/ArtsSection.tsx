@@ -4,6 +4,7 @@ import HiddenSectionTitle from '@/components/HiddenSectionTitle';
 import Slider from '@/components/Slider';
 import { ClassNames, artsSectionCards } from '@/constants';
 import { Image, Section } from './ArtsSection.styles';
+import Container from '@/components/Container';
 
 const ArtsSection: FC = () => {
   const cards = artsSectionCards.map((avatar) => (
@@ -12,23 +13,25 @@ const ArtsSection: FC = () => {
 
   return (
     <Section>
-      <HiddenSectionTitle title='Arts' />
-      <FakeSectionTitle title='COLLECTION' />
-      <Slider
-        slidesPerView={1}
-        cards={cards}
-        className={ClassNames.collectionSliderMobile}
-      />
-      <Slider
-        slidesPerView={2}
-        cards={cards}
-        className={ClassNames.collectionSliderTablet}
-      />
-      <Slider
-        slidesPerView={4}
-        cards={cards}
-        className={ClassNames.collectionSliderDesktop}
-      />
+      <Container>
+        <HiddenSectionTitle title='Arts' />
+        <FakeSectionTitle title='COLLECTION' />
+        <Slider
+          slidesPerView={1}
+          cards={cards}
+          className={ClassNames.collectionSliderMobile}
+        />
+        <Slider
+          slidesPerView={2}
+          cards={cards}
+          className={ClassNames.collectionSliderTablet}
+        />
+        <Slider
+          slidesPerView={4}
+          cards={cards}
+          className={ClassNames.collectionSliderDesktop}
+        />
+      </Container>
     </Section>
   );
 };

@@ -12,7 +12,7 @@ export const Section = styled.section`
     padding-top: ${({ theme }) => theme.spacing(30)};
   }
 
-  & > .${ClassNames.collectionSliderMobile} {
+  & .${ClassNames.collectionSliderMobile} {
     margin-top: ${({ theme }) => theme.spacing(6)};
 
     @media screen and (min-width: 768px) {
@@ -20,7 +20,7 @@ export const Section = styled.section`
     }
   }
 
-  & > .${ClassNames.collectionSliderTablet} {
+  & .${ClassNames.collectionSliderTablet} {
     display: none;
     margin-top: ${({ theme }) => theme.spacing(10)};
 
@@ -29,7 +29,7 @@ export const Section = styled.section`
     }
   }
 
-  & > .${ClassNames.collectionSliderDesktop} {
+  & .${ClassNames.collectionSliderDesktop} {
     display: none;
     margin-top: ${({ theme }) => theme.spacing(20)};
 

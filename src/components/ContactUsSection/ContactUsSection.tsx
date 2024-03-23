@@ -3,20 +3,23 @@ import HiddenSectionTitle from '../HiddenSectionTitle';
 import FakeSectionTitle from '../FakeSectionTitle';
 import { IoMdClose } from 'react-icons/io';
 import ContactUsForm from '../ContactUsForm';
-import { Container, Section, Text } from './ContactUsSection.styled';
+import { FormWpar, Section, Text } from './ContactUsSection.styled';
+import Container from '@/components/Container';
 
 const ContactUsSection: FC = () => {
   return (
     <Section>
-      <HiddenSectionTitle title='Contact Us' />
-      <FakeSectionTitle title='Are you in?' />
       <Container>
-        <IoMdClose size={36} />
-        <Text>
-          Join the YACHT APE community to be one of the first to receive our
-          limited edition NFT
-        </Text>
-        <ContactUsForm />
+        <HiddenSectionTitle title='Contact Us' />
+        <FakeSectionTitle title='Are you in?' />
+        <FormWpar>
+          <IoMdClose size={36} />
+          <Text>
+            Join the YACHT APE community to be one of the first to receive our
+            limited edition NFT
+          </Text>
+          <ContactUsForm />
+        </FormWpar>
       </Container>
     </Section>
   );

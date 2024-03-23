@@ -11,6 +11,7 @@ import {
 import Arrow from '@/icons/up-right-arrow.svg?react';
 import CardsList from '../CardsList';
 import { ClassNames, mindMapSectionCards } from '@/constants';
+import Container from '@/components/Container';
 
 const MindMapSection: FC = () => {
   const cards = [
@@ -40,9 +41,11 @@ const MindMapSection: FC = () => {
 
   return (
     <Section>
-      <SectionTitle title='MIND map' />
-      <Slider cards={cards} slidesPerView={1} className={ClassNames.slider} />
-      <CardsList cards={cards} />
+      <Container>
+        <SectionTitle title='MIND map' />
+        <Slider cards={cards} slidesPerView={1} className={ClassNames.slider} />
+        <CardsList cards={cards} />
+      </Container>
     </Section>
   );
 };

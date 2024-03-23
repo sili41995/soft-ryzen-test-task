@@ -3,12 +3,15 @@ import SectionTitle from '@/components/SectionTitle';
 import { faqSectionCards } from '@/constants';
 import FaqSectionList from '@/components/FaqSectionList';
 import { Section } from './FaqSection.styled';
+import Container from '@/components/Container';
 
 const FaqSection: FC = () => {
   return (
     <Section>
-      <SectionTitle title='FAQ' />
-      <FaqSectionList faqSectionCards={faqSectionCards} />
+      <Container>
+        <SectionTitle title='FAQ' />
+        <FaqSectionList faqSectionCards={faqSectionCards} />
+      </Container>
     </Section>
   );
 };
