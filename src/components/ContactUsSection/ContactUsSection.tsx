@@ -5,10 +5,11 @@ import { IoMdClose } from 'react-icons/io';
 import ContactUsForm from '../ContactUsForm';
 import { FormWpar, Section, Text } from './ContactUsSection.styled';
 import Container from '@/components/Container';
+import { IProps } from './ContactUsSection.types';
 
-const ContactUsSection: FC = () => {
+const ContactUsSection: FC<IProps> = ({ sectionRef }) => {
   return (
-    <Section>
+    <Section ref={sectionRef}>
       <Container>
         <HiddenSectionTitle title='Contact Us' />
         <FakeSectionTitle title='Are you in?' />

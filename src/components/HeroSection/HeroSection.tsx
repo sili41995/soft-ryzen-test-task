@@ -18,8 +18,9 @@ import Container from '@/components/Container';
 import mobileBgImage from '@/images/heroSection/mobileBgImage.png';
 import tabletBgImage from '@/images/heroSection/tabletBgImage.png';
 import desktopBgImage from '@/images/heroSection/desktopBgImage.png';
+import { IProps } from './HeroSection.types';
 
-const HeroSection: FC = () => {
+const HeroSection: FC<IProps> = ({ onMeetApesBtnClick }) => {
   return (
     <Section>
       <ContentWrap
@@ -35,7 +36,9 @@ const HeroSection: FC = () => {
           <TextWrap>
             <Warning>Apes aRe eveRywhere</Warning>
             <DescriptionWrap>
-              <Button type='button'>MEET APES</Button>
+              <Button type='button' onClick={onMeetApesBtnClick}>
+                MEET APES
+              </Button>
               <Description>
                 Yacht Ape is a collection of unique digital apes that you can
                 own in NFT format
