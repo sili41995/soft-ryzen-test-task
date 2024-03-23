@@ -5,3 +5,4 @@ export { default as faqSectionCards } from './faqSectionCards';
 export { default as artsSectionCards } from './artsSectionCards';
 export { default as mindMapSectionCards } from './mindMapSectionCards';
 export { default as regExp } from './regExp';
+export { default as PagePaths } from './pagePaths';

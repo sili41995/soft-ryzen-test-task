@@ -10,6 +10,7 @@ import {
   interBlack,
   interRegular,
 } from '@/fonts';
+import { theme } from '@/constants';
 
 const GlobalStyles: FC = () => (
   <Global
@@ -68,6 +69,7 @@ const GlobalStyles: FC = () => (
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         overflow-y: scroll;
+        background-color: ${theme.colors.body};
       }
 
       code {

@@ -24,7 +24,7 @@ export const SubmitFormBtn = styled.button`
   transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 
   &:is(:hover, :focus) {
-    color: ${({ theme }) => theme.colors.cardBg};
+    color: ${({ theme }) => theme.colors.primaryColor};
   }
 
   @media screen and (min-width: 1280px) {

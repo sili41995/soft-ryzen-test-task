@@ -23,7 +23,7 @@ export const IconWrap = styled.span`
   padding: ${({ theme }) => theme.spacing(3)};
   border-radius: 8px 0 0 8px;
   backdrop-filter: blur(12px);
-  background-color: ${({ theme }) => theme.colors.cardBg};
+  background-color: ${({ theme }) => theme.colors.primaryColor};
 
   @media screen and (min-width: 1280px) {
     padding: ${({ theme }) => theme.spacing(5)};
@@ -37,7 +37,7 @@ export const StyledInput = styled.input<IStyledProps>`
   align-self: stretch;
   border: 1px solid;
   border-color: ${({ theme, invalidField }) =>
-    invalidField ? theme.colors.accent : theme.colors.cardBg};
+    invalidField ? theme.colors.accent : theme.colors.primaryColor};
   background-color: transparent;
   border-radius: 0 8px 8px 0;
   color: ${({ theme, invalidField }) =>

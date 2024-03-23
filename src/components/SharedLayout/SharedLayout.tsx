@@ -1,16 +1,13 @@
 import { FC, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Loader from '@/components/Loader';
-import { Copyright, Footer, Header, Main } from './SharedLayout.styled';
+import { Copyright, Footer, Main } from './SharedLayout.styled';
 import Container from '@/components/Container';
+import Header from '../Header';
 
 const SharedLayout: FC = () => (
   <>
-    <Header>
-      <Container>
-        <></>
-      </Container>
-    </Header>
+    <Header />
     <Main>
       <Suspense fallback={<Loader />}>
         <Outlet />

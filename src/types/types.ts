@@ -1,4 +1,5 @@
-import { MouseEvent } from 'react';
+import { PagePaths } from '@/constants';
+import { MouseEvent, ReactNode } from 'react';
 
 export interface IFaqSectionCard {
   title: string;
@@ -28,3 +29,10 @@ export interface IRegExp {
 }
 
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
+
+export interface INavLink {
+  path: PagePaths;
+  icon: ReactNode;
+}
+
+export type NavLinks = Readonly<INavLink[]>;

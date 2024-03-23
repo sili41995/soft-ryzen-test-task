@@ -30,7 +30,7 @@ export const Card = styled.button<IStyledProps>`
   border: none;
   border-radius: 12px;
   background-color: ${({ theme, isActiveCard }) =>
-    isActiveCard ? theme.colors.cardBg : 'transparent'};
+    isActiveCard ? theme.colors.primaryColor : 'transparent'};
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(2)}`} 10px;
   padding-bottom: ${({ theme, isActiveCard }) =>
     isActiveCard ? '10px' : theme.spacing(2)};

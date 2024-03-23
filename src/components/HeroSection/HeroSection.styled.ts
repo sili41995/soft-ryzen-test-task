@@ -41,7 +41,7 @@ export const ContentWrap = styled.div<IStyledProps>`
 `;
 
 export const Question = styled.p`
-  color: ${({ theme }) => theme.colors.cardBg};
+  color: ${({ theme }) => theme.colors.primaryColor};
   font-family: Biro Script Plus;
   font-size: 16px;
   font-weight: 400;
@@ -62,7 +62,7 @@ export const Question = styled.p`
 `;
 
 export const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.cardBg};
+  color: ${({ theme }) => theme.colors.primaryColor};
   font-family: Right Grotesk;
   font-size: 44px;
   font-weight: 900;
@@ -107,7 +107,7 @@ export const TextWrap = styled.div`
 `;
 
 export const Warning = styled.p`
-  color: ${({ theme }) => theme.colors.cardBg};
+  color: ${({ theme }) => theme.colors.primaryColor};
   font-family: Biro Script Plus;
   font-size: 16px;
   font-weight: 400;
@@ -150,7 +150,7 @@ export const DescriptionWrap = styled.div`
 `;
 
 export const Description = styled.p`
-  color: ${({ theme }) => theme.colors.cardBg};
+  color: ${({ theme }) => theme.colors.primaryColor};
   font-family: Messina Sans Mono;
   font-size: 12px;
   font-weight: 400;
@@ -168,7 +168,7 @@ export const TabletDescription = styled.p`
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     display: block;
-    color: ${({ theme }) => theme.colors.cardBg};
+    color: ${({ theme }) => theme.colors.primaryColor};
     font-family: Messina Sans Mono;
     font-size: 12px;
     font-weight: 400;
@@ -189,7 +189,7 @@ export const DesktopDescription = styled.p`
 
   @media screen and (min-width: 1280px) {
     display: block;
-    color: ${({ theme }) => theme.colors.cardBg};
+    color: ${({ theme }) => theme.colors.primaryColor};
     font-family: Messina Sans Mono;
     font-size: 16px;
     font-weight: 400;
@@ -205,7 +205,7 @@ export const Button = styled.button`
   border: none;
   backdrop-filter: blur(12px);
   background-color: rgba(30, 30, 30, 0.1);
-  color: ${({ theme }) => theme.colors.cardBg};
+  color: ${({ theme }) => theme.colors.primaryColor};
   font-family: Right Grotesk;
   font-size: 16px;
   font-weight: 900;

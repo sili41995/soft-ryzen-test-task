@@ -1,20 +1,11 @@
 import styled from '@emotion/styled';
 
-export const Header = styled.header`
-  /* display: inline-block; */
-  /* min-width: 100%; */
-  /* padding-top: ${({ theme }) => theme.spacing(5)}; */
-  /* padding-bottom: ${({ theme }) => theme.spacing(5)}; */
-`;
-
 export const Main = styled.main`
   min-height: 100vh;
-  background-color: ${({ theme }) => theme.colors.body};
   overflow-x: hidden;
 `;
 
 export const Footer = styled.footer`
-  background-color: ${({ theme }) => theme.colors.body};
   padding-bottom: ${({ theme }) => theme.spacing(6)};
 
   @media screen and (min-width: 768px) {

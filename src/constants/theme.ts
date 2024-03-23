@@ -7,11 +7,15 @@ interface ITheme {
     body: string;
     accent: string;
     white: string;
-    cardBg: string;
+    primaryColor: string;
   };
   // fontWeight: { };
   // fontSize: {  };
-  padding: { container: number };
+  padding: {
+    container: number;
+    mobileHeader: number;
+    tabletHeader: number;
+  };
   // borderRadius: {  };
   // primaryGap: number;
   containerWidth: {
@@ -25,10 +29,10 @@ interface ITheme {
 
 const theme: ITheme = {
   colors: {
-    body: '#171717',
+    primaryColor: '#1e1e1e',
     accent: '#DC3B5A',
+    body: '#171717',
     white: '#FFFFFF',
-    cardBg: '#1e1e1e',
   },
   // fontWeight: {
   // },
@@ -36,6 +40,8 @@ const theme: ITheme = {
   // },
   padding: {
     container: 16,
+    mobileHeader: 8,
+    tabletHeader: 12,
   },
   // borderRadius: {
   // },
