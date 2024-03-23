@@ -1,44 +1,38 @@
 import { FC } from 'react';
-import { Container, ListItem, MenuBtn, NavLinksList } from './Menu.styled';
-import { Link } from 'react-router-dom';
+import { Container, MenuBtn, ControlsWrap } from './Menu.styled';
 import { IProps } from './Menu.types';
+import AnchorLinksList from '@/components/AnchorLinksList';
+import NavLinksList from '@/components/NavLinksList';
 
 const Menu: FC<IProps> = ({
   scrollingOccurred,
   onMenuBtnClick,
   showMobileMenu,
   navLinks,
-  sectionIds,
+  anchorLinks,
+  onAnchorLinkClick,
 }) => {
   const menuBtnTitle = showMobileMenu ? 'CLOSE' : 'MENU';
 
   return (
     <Container>
       {showMobileMenu && (
-        <ul>
-          {sectionIds.map(({ id, title }) => (
-            <li key={id}>
-              <Link to={`#${id}`}>{title}</Link>
-            </li>
-          ))}
-        </ul>
+        <AnchorLinksList
+          scrollingOccurred={scrollingOccurred}
+          anchorLinks={anchorLinks}
+          onAnchorLinkClick={onAnchorLinkClick}
+        />
       )}
-      <MenuBtn
-        onClick={onMenuBtnClick}
-        scrollingOccurred={scrollingOccurred}
-        showMobileMenu={showMobileMenu}
-      >
-        {menuBtnTitle}
-      </MenuBtn>
-      <NavLinksList>
-        {navLinks.map(({ icon: Icon, path }, index) => (
-          <ListItem key={index} scrollingOccurred={scrollingOccurred}>
-            <Link to={path}>
-              <Icon />
-            </Link>
-          </ListItem>
-        ))}
-      </NavLinksList>
+      <ControlsWrap>
+        <MenuBtn
+          onClick={onMenuBtnClick}
+          scrollingOccurred={scrollingOccurred}
+          showMobileMenu={showMobileMenu}
+        >
+          {menuBtnTitle}
+        </MenuBtn>
+        <NavLinksList navLinks={navLinks} scrollingOccurred />
+      </ControlsWrap>
     </Container>
   );
 };

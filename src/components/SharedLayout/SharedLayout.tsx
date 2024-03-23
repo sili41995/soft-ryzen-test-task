@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Loader from '@/components/Loader';
 import { Copyright, Footer, Main } from './SharedLayout.styled';
 import Container from '@/components/Container';
-import Header from '../Header';
+import Header from '@/components/Header';
 
 const SharedLayout: FC = () => (
   <>

@@ -5,7 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { Form, SubmitFormBtn } from './ContactUsForm.styled';
 import Discord from '@/icons/discord.svg?react';
 import Wallet from '@/icons/wallet.svg?react';
-import Input from '../Input';
+import Input from '@/components/Input';
 import { makeBlur } from '@/utils';
 
 const ContactUsForm: FC = () => {

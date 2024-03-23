@@ -2,7 +2,7 @@ import { FC } from 'react';
 import FakeSectionTitle from '@/components/FakeSectionTitle';
 import HiddenSectionTitle from '@/components/HiddenSectionTitle';
 import Slider from '@/components/Slider';
-import { ClassNames, artsSectionCards } from '@/constants';
+import { ClassNames, Sections, artsSectionCards } from '@/constants';
 import { Image, Section } from './ArtsSection.styles';
 import Container from '@/components/Container';
 
@@ -12,7 +12,7 @@ const ArtsSection: FC = () => {
   ));
 
   return (
-    <Section>
+    <Section id={Sections.arts}>
       <Container>
         <HiddenSectionTitle title='Arts' />
         <FakeSectionTitle title='COLLECTION' />

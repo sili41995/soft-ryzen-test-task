@@ -1,7 +1,7 @@
-import { SectionIds } from '@/types/types';
+import { AnchorLinks } from '@/types/types';
 import Sections from './sections';
 
-const sectionIds: SectionIds = [
+const anchorLinks: AnchorLinks = [
   { id: Sections.about, title: 'ABOUT' },
   { id: Sections.mMap, title: 'M-map' },
   { id: Sections.faq, title: 'Faq' },
@@ -9,4 +9,4 @@ const sectionIds: SectionIds = [
   { id: Sections.mint, title: 'MINT' },
 ];
 
-export default sectionIds;
+export default anchorLinks;

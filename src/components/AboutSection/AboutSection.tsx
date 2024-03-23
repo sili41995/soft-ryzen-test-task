@@ -15,11 +15,12 @@ import {
 import mobileImg from '@/images/storySection/mobileBgImage.png';
 import tabletImg from '@/images/storySection/tabletBgImage.png';
 import desktopImg from '@/images/storySection/desktopBgImage.png';
-import Container from '../Container';
-import Banner from '../Banner';
+import Container from '@/components/Container';
+import Banner from '@/components/Banner';
+import { Sections } from '@/constants';
 
 const AboutSection: FC = () => (
-  <Section>
+  <Section id={Sections.about}>
     <Container>
       <ContentWrap
         mobileImg={mobileImg}

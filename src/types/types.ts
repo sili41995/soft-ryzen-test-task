@@ -37,9 +37,9 @@ export interface INavLink {
 
 export type NavLinks = Readonly<INavLink[]>;
 
-export interface ISectionId {
+export interface IAnchorLink {
   id: Sections;
   title: string;
 }
 
-export type SectionIds = Readonly<ISectionId[]>;
+export type AnchorLinks = Readonly<IAnchorLink[]>;

@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from 'react';
 import { Container, Nav, StyledHeader } from './Header.styled';
 import { Link } from 'react-router-dom';
-import { PagePaths, navLinks, sectionIds } from '@/constants';
+import { PagePaths, navLinks, anchorLinks } from '@/constants';
 import Logo from '@/icons/logo.svg?react';
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
-import Menu from '../Menu';
+import Menu from '@/components/Menu';
 
 const Header: FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
@@ -28,8 +28,12 @@ const Header: FC = () => {
     };
   }, [scrollingOccurred]);
 
-  const onMenuBtnClick = (e: BtnClickEvent) => {
+  const toggleShowMobileMenu = () => {
     setShowMobileMenu((prevState) => !prevState);
+  };
+
+  const onMenuBtnClick = (e: BtnClickEvent) => {
+    toggleShowMobileMenu();
     makeBlur(e.currentTarget);
   };
 
@@ -44,11 +48,12 @@ const Header: FC = () => {
           </Nav>
         )}
         <Menu
-          sectionIds={sectionIds}
+          anchorLinks={anchorLinks}
           showMobileMenu={showMobileMenu}
           onMenuBtnClick={onMenuBtnClick}
           navLinks={navLinks}
           scrollingOccurred={scrollingOccurred}
+          onAnchorLinkClick={toggleShowMobileMenu}
         />
       </Container>
     </StyledHeader>

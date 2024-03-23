@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import SectionTitle from '../SectionTitle';
-import Slider from '../Slider';
+import SectionTitle from '@/components/SectionTitle';
+import Slider from '@/components/Slider';
 import {
   Card,
   CardText,
@@ -9,8 +9,8 @@ import {
   Section,
 } from './MindMapSection.styled';
 import Arrow from '@/icons/up-right-arrow.svg?react';
-import CardsList from '../CardsList';
-import { ClassNames, mindMapSectionCards } from '@/constants';
+import CardsList from '@/components/CardsList';
+import { ClassNames, Sections, mindMapSectionCards } from '@/constants';
 import Container from '@/components/Container';
 
 const MindMapSection: FC = () => {
@@ -40,7 +40,7 @@ const MindMapSection: FC = () => {
   ];
 
   return (
-    <Section>
+    <Section id={Sections.mMap}>
       <Container>
         <SectionTitle title='MIND map' />
         <Slider cards={cards} slidesPerView={1} className={ClassNames.slider} />
