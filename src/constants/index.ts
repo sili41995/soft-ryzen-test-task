@@ -6,3 +6,6 @@ export { default as artsSectionCards } from './artsSectionCards';
 export { default as mindMapSectionCards } from './mindMapSectionCards';
 export { default as regExp } from './regExp';
 export { default as PagePaths } from './pagePaths';
+export { default as Sections } from './sections';
+export { default as sectionIds } from './sectionIds';
+export { default as navLinks } from './navLinks';

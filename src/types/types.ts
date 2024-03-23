@@ -1,5 +1,5 @@
-import { PagePaths } from '@/constants';
-import { MouseEvent, ReactNode } from 'react';
+import { PagePaths, Sections } from '@/constants';
+import { FunctionComponent, MouseEvent, SVGProps } from 'react';
 
 export interface IFaqSectionCard {
   title: string;
@@ -32,7 +32,14 @@ export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
 export interface INavLink {
   path: PagePaths;
-  icon: ReactNode;
+  icon: FunctionComponent<SVGProps<SVGSVGElement>>;
 }
 
 export type NavLinks = Readonly<INavLink[]>;
+
+export interface ISectionId {
+  id: Sections;
+  title: string;
+}
+
+export type SectionIds = Readonly<ISectionId[]>;

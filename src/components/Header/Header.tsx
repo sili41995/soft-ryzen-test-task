@@ -1,36 +1,55 @@
-import { FC } from 'react';
-import { Container, Menu, MenuBtn, Nav, StyledHeader } from './Header.styled';
+import { FC, useEffect, useState } from 'react';
+import { Container, Nav, StyledHeader } from './Header.styled';
 import { Link } from 'react-router-dom';
-import { PagePaths } from '@/constants';
+import { PagePaths, navLinks, sectionIds } from '@/constants';
 import Logo from '@/icons/logo.svg?react';
-import Logomark from '@/icons/logomark.svg?react';
-import X from '@/icons/x.svg?react';
-import { FaDiscord } from 'react-icons/fa';
-import { NavLinks } from '@/types/types';
+import { BtnClickEvent } from '@/types/types';
+import { makeBlur } from '@/utils';
+import Menu from '../Menu';
 
 const Header: FC = () => {
-  const navLinks: NavLinks = [
-    { path: PagePaths.homePath, icon: <FaDiscord /> },
-    { path: PagePaths.homePath, icon: <Logomark /> },
-    { path: PagePaths.homePath, icon: <X /> },
-  ];
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  const [scrollingOccurred, setScrollingOccurred] = useState<boolean>(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 1) {
+        setScrollingOccurred(true);
+      } else {
+        setScrollingOccurred(false);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll);
+
+    return () => {
+      removeEventListener('scroll', onScroll);
+    };
+  }, [scrollingOccurred]);
+
+  const onMenuBtnClick = (e: BtnClickEvent) => {
+    setShowMobileMenu((prevState) => !prevState);
+    makeBlur(e.currentTarget);
+  };
 
   return (
     <StyledHeader>
-      <Container>
-        <Nav>
-          <Link to={PagePaths.homePath}>
-            <Logo />
-          </Link>
-        </Nav>
-        <Menu>
-          <MenuBtn>MENU</MenuBtn>
-          {navLinks.map(({ icon, path }, index) => (
-            <Link to={path} key={index}>
-              {icon}
+      <Container scrollingOccurred={scrollingOccurred}>
+        {!scrollingOccurred && (
+          <Nav>
+            <Link to={PagePaths.homePath}>
+              <Logo />
             </Link>
-          ))}
-        </Menu>
+          </Nav>
+        )}
+        <Menu
+          sectionIds={sectionIds}
+          showMobileMenu={showMobileMenu}
+          onMenuBtnClick={onMenuBtnClick}
+          navLinks={navLinks}
+          scrollingOccurred={scrollingOccurred}
+        />
       </Container>
     </StyledHeader>
   );
