@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import {
   Accent,
+  Button,
   ContentWrap,
   Description,
   DescriptionWrap,
@@ -10,21 +11,31 @@ import {
   TabletDescription,
   TextWrap,
   Title,
+  TitleAccent,
   Warning,
 } from './HeroSection.styled';
-import Container from '../Container';
+import Container from '@/components/Container';
+import mobileBgImage from '@/images/heroSection/mobileBgImage.png';
+import tabletBgImage from '@/images/heroSection/tabletBgImage.png';
+import desktopBgImage from '@/images/heroSection/desktopBgImage.png';
 
 const HeroSection: FC = () => {
   return (
     <Section>
-      <ContentWrap>
+      <ContentWrap
+        mobileBgImage={mobileBgImage}
+        tabletBgImage={tabletBgImage}
+        desktopBgImage={desktopBgImage}
+      >
         <Container>
           <Question>diD yOu seE iT ?</Question>
-          <Title>YACHT APES</Title>
+          <Title>
+            <TitleAccent>YACHT</TitleAccent> <TitleAccent>APES</TitleAccent>
+          </Title>
           <TextWrap>
             <Warning>Apes aRe eveRywhere</Warning>
             <DescriptionWrap>
-              <button type='button'>MEET APES</button>
+              <Button type='button'>MEET APES</Button>
               <Description>
                 Yacht Ape is a collection of unique digital apes that you can
                 own in NFT format
