@@ -1,9 +1,9 @@
+import { FaDiscord } from 'react-icons/fa';
 import Logomark from '@/icons/logomark.svg?react';
 import X from '@/icons/x.svg?react';
-import { FaDiscord } from 'react-icons/fa';
-import PagePaths from './pagePaths';
 import { NavLinks } from '@/types/types';
-import { AriaLabels } from '.';
+import PagePaths from './pagePaths';
+import AriaLabels from './ariaLabels';
 
 const navLinks: NavLinks = [
   { path: PagePaths.homePath, icon: FaDiscord, ariaLabel: AriaLabels.discord },
