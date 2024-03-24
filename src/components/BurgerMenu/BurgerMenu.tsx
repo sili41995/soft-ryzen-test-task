@@ -18,10 +18,6 @@ const BurgerMenu: FC<IProps> = ({ burgerMenuControls, scrollingOccurred }) => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(scrollingOccurred);
-  });
-
   return (
     <Backdrop>
       <Container>

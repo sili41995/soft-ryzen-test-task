@@ -26,13 +26,12 @@ export const Container = styled.div`
   @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: ${({ theme }) =>
       theme.containerWidth.mobile + theme.padding.container * 2}px;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 294px;
     padding-bottom: ${({ theme }) => theme.spacing(20)};
     padding-left: ${({ theme }) => theme.padding.container}px;
     padding-right: ${({ theme }) => theme.padding.container}px;
@@ -43,6 +42,10 @@ export const List = styled.ul`
   display: flex;
 
   @media screen and (max-width: 767px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing(4)};
     align-items: center;
