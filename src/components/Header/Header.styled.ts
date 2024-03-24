@@ -3,7 +3,6 @@ import { IStyledProps } from './Header.types';
 
 export const StyledHeader = styled.header`
   position: fixed;
-  z-index: 10;
   top: 70px;
   width: 100%;
 
