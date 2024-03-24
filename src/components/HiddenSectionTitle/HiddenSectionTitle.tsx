@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Title } from './HiddenSectionTitle.styled';
 import { IProps } from './HiddenSectionTitle.types';
+import { Title } from './HiddenSectionTitle.styled';
 
 const HiddenSectionTitle: FC<IProps> = ({ title }) => <Title>{title}</Title>;
 

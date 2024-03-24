@@ -46,14 +46,14 @@ export const TitleWrap = styled.div`
   & > p {
     color: ${({ theme }) => theme.colors.white};
     font-family: Messina Sans Mono;
-    font-size: 16px;
+    font-size: ${({ theme }) => theme.fontSize.primary}px;
     font-weight: 400;
     line-height: 1.19;
     text-transform: uppercase;
     text-align: right;
 
     @media screen and (min-width: 1280px) {
-      font-size: 24px;
+      font-size: ${({ theme }) => theme.fontSize.other}px;
       line-height: 1.21;
     }
   }
@@ -125,19 +125,19 @@ export const TextWrap = styled.div`
 
 export const Text = styled.p`
   font-family: Messina Sans Mono;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.secondary}px;
   font-weight: 400;
   line-height: 1.17;
   text-align: center;
   text-transform: uppercase;
 
   @media screen and (min-width: 768px) {
-    font-size: 16px;
+    font-size: ${({ theme }) => theme.fontSize.primary}px;
     line-height: 1.19;
   }
 
   @media screen and (min-width: 1280px) {
-    font-size: 24px;
+    font-size: ${({ theme }) => theme.fontSize.other}px;
     line-height: 1.21;
   }
 `;

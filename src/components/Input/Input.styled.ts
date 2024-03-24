@@ -43,7 +43,7 @@ export const StyledInput = styled.input<IStyledProps>`
   color: ${({ theme, invalidField }) =>
     invalidField ? theme.colors.accent : theme.colors.white};
   font-family: Messina Sans Mono;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.secondary}px;
   font-weight: 400;
   line-height: 1.17;
   text-transform: uppercase;
@@ -62,7 +62,7 @@ export const StyledInput = styled.input<IStyledProps>`
   @media screen and (min-width: 1280px) {
     padding: ${({ theme }) => theme.spacing(5)};
     border-radius: 0 12px 12px 0;
-    font-size: 16px;
+    font-size: ${({ theme }) => theme.fontSize.primary}px;
     line-height: 1.19;
   }
 `;
@@ -78,7 +78,7 @@ export const Error = styled.p<IStyledProps>`
   text-transform: uppercase;
 
   @media screen and (min-width: 1280px) {
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.fontSize.secondary}px;
     line-height: 1.17;
   }
 `;

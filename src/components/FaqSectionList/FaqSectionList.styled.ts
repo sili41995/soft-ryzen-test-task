@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 import { IStyledProps } from './FaqSectionList.types';
 
-24;
-48;
-80;
-
 export const List = styled.ul`
   margin-top: ${({ theme }) => theme.spacing(6)};
 
@@ -84,18 +80,18 @@ export const Number = styled.p<IStyledProps>`
   color: ${({ theme, isActiveCard }) =>
     isActiveCard ? theme.colors.white : theme.colors.accent};
   font-family: Biro Script Plus;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.secondary}px;
   font-weight: 400;
   line-height: 1.67;
   transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 
   @media screen and (min-width: 768px) {
-    font-size: 16px;
+    font-size: ${({ theme }) => theme.fontSize.primary}px;
     line-height: 1.69;
   }
 
   @media screen and (min-width: 1280px) {
-    font-size: 24px;
+    font-size: ${({ theme }) => theme.fontSize.other}px;
     line-height: 1.67;
   }
 `;
@@ -133,7 +129,7 @@ export const Description = styled.p`
   margin-top: 10px;
   color: ${({ theme }) => theme.colors.white};
   font-family: Messina Sans Mono;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.secondary}px;
   font-weight: 400;
   line-height: 1.17;
   text-transform: uppercase;
@@ -144,7 +140,7 @@ export const Description = styled.p`
 
   @media screen and (min-width: 1280px) {
     margin-top: ${({ theme }) => theme.spacing(9)};
-    font-size: 16px;
+    font-size: ${({ theme }) => theme.fontSize.primary}px;
     line-height: 1.19;
   }
 `;

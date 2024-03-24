@@ -18,7 +18,7 @@ export const SubmitFormBtn = styled.button`
   background-color: ${({ theme }) => theme.colors.accent};
   color: ${({ theme }) => theme.colors.white};
   font-family: Right Grotesk;
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: 900;
   line-height: 1.19;
   transition: color ${({ theme }) => theme.transitionDurationAndFunc};

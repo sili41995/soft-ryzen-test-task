@@ -1,5 +1,6 @@
-import { PagePaths, Sections } from '@/constants';
 import { FunctionComponent, MouseEvent, RefObject, SVGProps } from 'react';
+import { UseFormHandleSubmit, UseFormRegister } from 'react-hook-form';
+import { PagePaths, Sections } from '@/constants';
 
 export interface IFaqSectionCard {
   title: string;
@@ -58,3 +59,27 @@ export interface IBurgerMenuControl {
 }
 
 export type BurgerMenuControls = Readonly<IBurgerMenuControl[]>;
+
+export interface IUseContactUsForm {
+  handleSubmit: UseFormHandleSubmit<ICredentials, undefined>;
+  invalidUsernameValue: boolean;
+  invalidWalletAddressValue: boolean;
+  handleFormSubmit: (data: ICredentials) => void;
+  register: UseFormRegister<ICredentials>;
+  showDefaultBtnTitle: boolean;
+  showErrorBtnTittle: boolean;
+  isSubmitSuccessful: boolean;
+}
+
+export interface IUseHeader {
+  burgerMenuBtnTitle: string;
+  burgerMenuControls: BurgerMenuControls;
+  scrollingOccurred: boolean;
+  showBurgerMenu: boolean;
+  onBurgerMenuBtnClick: (e: BtnClickEvent) => void;
+}
+
+export interface IUseSlider {
+  onPrevBtnClick: () => void;
+  onNextBtnClick: () => void;
+}

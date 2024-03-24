@@ -1,6 +1,7 @@
 import { BtnClickEvent, NavLinks, BurgerMenuControls } from '@/types/types';
 
 export interface IProps {
+  burgerMenuBtnTitle: string;
   showBurgerMenu: boolean;
   navLinks: NavLinks;
   scrollingOccurred: boolean;

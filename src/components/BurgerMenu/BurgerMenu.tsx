@@ -1,4 +1,5 @@
 import { FC, useEffect } from 'react';
+import { IProps } from './BurgerMenu.types';
 import {
   Backdrop,
   Button,
@@ -7,7 +8,6 @@ import {
   List,
   ListItem,
 } from './BurgerMenu.styled';
-import { IProps } from './BurgerMenu.types';
 
 const BurgerMenu: FC<IProps> = ({ burgerMenuControls, scrollingOccurred }) => {
   useEffect(() => {

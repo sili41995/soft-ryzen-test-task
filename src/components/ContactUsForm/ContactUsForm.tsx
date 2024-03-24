@@ -1,32 +1,24 @@
-import { regExp } from '@/constants';
-import { BtnClickEvent, ICredentials } from '@/types/types';
 import { FC } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { Form, SubmitFormBtn } from './ContactUsForm.styled';
+import { regExp } from '@/constants';
 import Discord from '@/icons/discord.svg?react';
 import Wallet from '@/icons/wallet.svg?react';
 import Input from '@/components/Input';
+import { useContactUsForm } from '@/hooks';
+import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
+import { Form, SubmitFormBtn } from './ContactUsForm.styled';
 
 const ContactUsForm: FC = () => {
-  const { register, formState, handleSubmit, reset, getFieldState } =
-    useForm<ICredentials>();
-  const { invalid: invalidUsernameValue } = getFieldState(
-    'username',
-    formState
-  );
-  const { invalid: invalidWalletAddressValue } = getFieldState(
-    'walletAddress',
-    formState
-  );
-  const { isSubmitted, isSubmitSuccessful } = formState;
-  const showDefaultBtnTitle = !isSubmitted;
-  const showErrorBtnTittle = isSubmitted && !isSubmitSuccessful;
-
-  const handleFormSubmit: SubmitHandler<ICredentials> = (data) => {
-    console.log(data);
-    reset();
-  };
+  const {
+    register,
+    handleSubmit,
+    invalidUsernameValue,
+    invalidWalletAddressValue,
+    handleFormSubmit,
+    showDefaultBtnTitle,
+    showErrorBtnTittle,
+    isSubmitSuccessful,
+  } = useContactUsForm();
 
   const onSubmitBtnClick = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);

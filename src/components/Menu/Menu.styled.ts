@@ -25,16 +25,16 @@ export const BurgerMenuBtn = styled.button<IStyledBurgerMenuBtnProps>`
   padding: 0;
   backdrop-filter: blur(12px);
   border-radius: 8px;
-  background-color: ${({ scrollingOccurred, showBurgerMenu }) =>
+  background-color: ${({ scrollingOccurred, showBurgerMenu, theme }) =>
     scrollingOccurred || showBurgerMenu
-      ? 'rgba(255, 255, 255, 0.1)'
-      : 'rgba(30, 30, 30, 0.1)'};
+      ? theme.colors.primaryBlur
+      : theme.colors.secondaryBlur};
   color: ${({ theme, scrollingOccurred, showBurgerMenu }) =>
     scrollingOccurred || showBurgerMenu
       ? theme.colors.white
       : theme.colors.primaryColor};
   font-family: Messina Sans Mono;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.secondary}px;
   font-weight: 600;
   line-height: 1.17;
   text-decoration: underline;
@@ -51,8 +51,10 @@ export const BurgerMenuBtn = styled.button<IStyledBurgerMenuBtnProps>`
   }
 
   @media screen and (min-width: 768px) {
-    background-color: ${({ scrollingOccurred }) =>
-      scrollingOccurred ? 'rgba(255, 255, 255, 0.1)' : 'rgba(30, 30, 30, 0.1)'};
+    background-color: ${({ scrollingOccurred, theme }) =>
+      scrollingOccurred
+        ? theme.colors.primaryBlur
+        : theme.colors.secondaryBlur};
     border-radius: ${({ showBurgerMenu }) =>
       showBurgerMenu ? '0px 12px 12px 0px' : '12px'};
     color: ${({ theme, scrollingOccurred }) =>
@@ -67,18 +69,18 @@ export const BurgerMenuBtn = styled.button<IStyledBurgerMenuBtnProps>`
 
   @media screen and (min-width: 1280px) {
     height: 80px;
-    font-size: 16px;
+    font-size: ${({ theme }) => theme.fontSize.primary}px;
     line-height: 1.19;
   }
 `;
 
 export const MenuBtn = styled.button<IStyledProps>`
-  background-color: ${({ scrollingOccurred }) =>
-    scrollingOccurred ? 'rgba(255, 255, 255, 0.1)' : 'rgba(30, 30, 30, 0.1)'};
+  background-color: ${({ scrollingOccurred, theme }) =>
+    scrollingOccurred ? theme.colors.primaryBlur : theme.colors.secondaryBlur};
   color: ${({ theme, scrollingOccurred }) =>
     scrollingOccurred ? theme.colors.white : theme.colors.primaryColor};
   font-family: Messina Sans Mono;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.secondary}px;
   font-weight: 600;
   line-height: 1.17;
   text-decoration: underline;

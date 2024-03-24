@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Error, IconWrap, InputWrap, Label, StyledInput } from './Input.styled';
 import { IProps } from './Input.types';
+import { Error, IconWrap, InputWrap, Label, StyledInput } from './Input.styled';
 
 const Input: FC<IProps> = ({
   placeholder,

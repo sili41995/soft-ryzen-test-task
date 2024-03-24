@@ -17,16 +17,16 @@ export const ListItem = styled.li<IStyledProps>`
     padding: ${({ theme }) => theme.spacing(4)};
     border-radius: 8px;
     backdrop-filter: blur(12px);
-    background-color: ${({ scrollingOccurred, showBurgerMenu }) =>
+    background-color: ${({ scrollingOccurred, showBurgerMenu, theme }) =>
       scrollingOccurred || showBurgerMenu
-        ? 'rgba(255, 255, 255, 0.1)'
-        : 'rgba(30, 30, 30, 0.1)'};
+        ? theme.colors.primaryBlur
+        : theme.colors.secondaryBlur};
 
     @media screen and (min-width: 768px) {
-      background-color: ${({ scrollingOccurred }) =>
+      background-color: ${({ scrollingOccurred, theme }) =>
         scrollingOccurred
-          ? 'rgba(255, 255, 255, 0.1)'
-          : 'rgba(30, 30, 30, 0.1)'};
+          ? theme.colors.primaryBlur
+          : theme.colors.secondaryBlur};
     }
 
     & > svg {
@@ -60,10 +60,10 @@ export const ListItem = styled.li<IStyledProps>`
     }
 
     @media screen and (min-width: 768px) {
-      background-color: ${({ scrollingOccurred }) =>
+      background-color: ${({ scrollingOccurred, theme }) =>
         scrollingOccurred
-          ? 'rgba(255, 255, 255, 0.1)'
-          : 'rgba(30, 30, 30, 0.1)'};
+          ? theme.colors.primaryBlur
+          : theme.colors.secondaryBlur};
       padding: ${({ theme }) => theme.spacing(3)};
       border-radius: 12px;
     }

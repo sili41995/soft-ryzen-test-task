@@ -18,7 +18,7 @@ export const Button = styled.button`
   border: none;
   color: ${({ theme }) => theme.colors.white};
   font-family: Biro Script Plus;
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.fontSize.other}px;
   font-weight: 400;
   line-height: 1;
 `;

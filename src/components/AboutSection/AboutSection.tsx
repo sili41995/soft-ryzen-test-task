@@ -1,5 +1,11 @@
 import { FC } from 'react';
 import { IoMdClose } from 'react-icons/io';
+import mobileImg from '@/images/storySection/mobileBgImage.png';
+import tabletImg from '@/images/storySection/tabletBgImage.png';
+import desktopImg from '@/images/storySection/desktopBgImage.png';
+import Container from '@/components/Container';
+import Banner from '@/components/Banner';
+import { IProps } from './AboutSection.types';
 import {
   Accent,
   ContentWrap,
@@ -11,17 +17,10 @@ import {
   TextWrap,
   Title,
   TitleWrap,
-} from './AboutSection.styles';
-import mobileImg from '@/images/storySection/mobileBgImage.png';
-import tabletImg from '@/images/storySection/tabletBgImage.png';
-import desktopImg from '@/images/storySection/desktopBgImage.png';
-import Container from '@/components/Container';
-import Banner from '@/components/Banner';
-import { Sections } from '@/constants';
-import { IProps } from './AboutSection.types';
+} from './AboutSection.styled';
 
 const AboutSection: FC<IProps> = ({ sectionRef }) => (
-  <Section id={Sections.about} ref={sectionRef}>
+  <Section ref={sectionRef}>
     <Container>
       <ContentWrap
         mobileImg={mobileImg}

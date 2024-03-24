@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Title } from './FakeSectionTitle.styled';
 import { IProps } from './FakeSectionTitle.types';
+import { Title } from './FakeSectionTitle.styled';
 
 const FakeSectionTitle: FC<IProps> = ({ title }) => <Title>{title}</Title>;
 

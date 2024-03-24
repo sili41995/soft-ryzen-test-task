@@ -1,5 +1,5 @@
-import { ClassNames } from '@/constants';
 import styled from '@emotion/styled';
+import { ClassNames } from '@/constants';
 
 export const Section = styled.section`
   padding-top: ${({ theme }) => theme.spacing(15)};

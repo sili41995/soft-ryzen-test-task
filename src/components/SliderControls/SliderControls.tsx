@@ -1,17 +1,9 @@
 import { FC } from 'react';
-import { useSwiper } from 'swiper/react';
 import { Button, List, ListItem } from './SliderControls.styled';
+import { useSlider } from '@/hooks';
 
 const SliderControls: FC = () => {
-  const swiper = useSwiper();
-
-  const onPrevBtnClick = () => {
-    swiper.slidePrev();
-  };
-
-  const onNextBtnClick = () => {
-    swiper.slideNext();
-  };
+  const { onNextBtnClick, onPrevBtnClick } = useSlider();
 
   return (
     <List>

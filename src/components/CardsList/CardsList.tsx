@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { List, ListItem } from './CardsList.styled';
 import { IProps } from './CardsList.types';
+import { List, ListItem } from './CardsList.styled';
 
 const CardsList: FC<IProps> = ({ cards }) => (
   <List>

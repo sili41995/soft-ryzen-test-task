@@ -8,16 +8,19 @@ interface ITheme {
     accent: string;
     white: string;
     primaryColor: string;
+    primaryBlur: string;
+    secondaryBlur: string;
   };
-  // fontWeight: { };
-  // fontSize: {  };
+  fontSize: {
+    primary: number;
+    secondary: number;
+    other: number;
+  };
   padding: {
     container: number;
     mobileHeader: number;
     tabletHeader: number;
   };
-  // borderRadius: {  };
-  // primaryGap: number;
   containerWidth: {
     mobile: number;
     tablet: number;
@@ -33,18 +36,15 @@ const theme: ITheme = {
     accent: '#DC3B5A',
     body: '#181818',
     white: '#FFFFFF',
+    primaryBlur: 'rgba(255, 255, 255, 0.1)',
+    secondaryBlur: 'rgba(30, 30, 30, 0.1)',
   },
-  // fontWeight: {
-  // },
-  // fontSize: {
-  // },
+  fontSize: { primary: 16, secondary: 12, other: 24 },
   padding: {
     container: 16,
     mobileHeader: 8,
     tabletHeader: 12,
   },
-  // borderRadius: {
-  // },
   containerWidth: {
     mobile: 216,
     tablet: 592,

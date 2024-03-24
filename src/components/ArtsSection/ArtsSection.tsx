@@ -2,18 +2,18 @@ import { FC } from 'react';
 import FakeSectionTitle from '@/components/FakeSectionTitle';
 import HiddenSectionTitle from '@/components/HiddenSectionTitle';
 import Slider from '@/components/Slider';
-import { ClassNames, Sections, artsSectionCards } from '@/constants';
-import { Image, Section } from './ArtsSection.styles';
 import Container from '@/components/Container';
+import { ClassNames } from '@/constants';
 import { IProps } from './ArtsSection.types';
+import { Image, Section } from './ArtsSection.styled';
 
-const ArtsSection: FC<IProps> = ({ sectionRef }) => {
+const ArtsSection: FC<IProps> = ({ sectionRef, artsSectionCards }) => {
   const cards = artsSectionCards.map((avatar) => (
     <Image src={avatar} alt='card avatar' />
   ));
 
   return (
-    <Section id={Sections.arts} ref={sectionRef}>
+    <Section ref={sectionRef}>
       <Container>
         <HiddenSectionTitle title='Arts' />
         <FakeSectionTitle title='COLLECTION' />

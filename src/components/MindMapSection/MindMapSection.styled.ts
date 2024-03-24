@@ -1,5 +1,5 @@
-import { ClassNames } from '@/constants';
 import styled from '@emotion/styled';
+import { ClassNames } from '@/constants';
 
 export const Section = styled.section`
   padding-top: ${({ theme }) => theme.spacing(20)};
@@ -52,7 +52,7 @@ export const CardTitle = styled.h3`
 
 export const CardText = styled.p`
   font-family: Messina Sans Mono;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.secondary}px;
   font-weight: 400;
   line-height: 1.17;
   text-align: left;
@@ -66,7 +66,7 @@ export const CardText = styled.p`
   @media screen and (min-width: 1280px) {
     width: 228px;
     margin-left: auto;
-    font-size: 24px;
+    font-size: ${({ theme }) => theme.fontSize.other}px;
     line-height: 1.21;
   }
 `;

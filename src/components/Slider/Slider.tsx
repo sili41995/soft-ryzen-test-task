@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import { IProps } from './Slider.types';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import SliderControls from '@/components/SliderControls';
 
 const Slider: FC<IProps> = ({ cards, slidesPerView, className }) => (

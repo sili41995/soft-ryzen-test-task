@@ -43,7 +43,7 @@ export const ContentWrap = styled.div<IStyledProps>`
 export const Question = styled.p`
   color: ${({ theme }) => theme.colors.primaryColor};
   font-family: Biro Script Plus;
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: 400;
   line-height: 1.69;
   text-align: center;
@@ -56,7 +56,7 @@ export const Question = styled.p`
 
   @media screen and (min-width: 1280px) {
     margin-left: 7px;
-    font-size: 24px;
+    font-size: ${({ theme }) => theme.fontSize.other}px;
     line-height: 1.67;
   }
 `;
@@ -109,7 +109,7 @@ export const TextWrap = styled.div`
 export const Warning = styled.p`
   color: ${({ theme }) => theme.colors.primaryColor};
   font-family: Biro Script Plus;
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: 400;
   line-height: 1.69;
   text-align: center;
@@ -125,7 +125,7 @@ export const Warning = styled.p`
   }
 
   @media screen and (min-width: 1280px) {
-    font-size: 24px;
+    font-size: ${({ theme }) => theme.fontSize.other}px;
     line-height: 1.67;
   }
 `;
@@ -152,7 +152,7 @@ export const DescriptionWrap = styled.div`
 export const Description = styled.p`
   color: ${({ theme }) => theme.colors.primaryColor};
   font-family: Messina Sans Mono;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.secondary}px;
   font-weight: 400;
   line-height: 1.17;
   text-align: center;
@@ -170,7 +170,7 @@ export const TabletDescription = styled.p`
     display: block;
     color: ${({ theme }) => theme.colors.primaryColor};
     font-family: Messina Sans Mono;
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.fontSize.secondary}px;
     font-weight: 400;
     line-height: 1.17;
     text-align: justify;
@@ -191,7 +191,7 @@ export const DesktopDescription = styled.p`
     display: block;
     color: ${({ theme }) => theme.colors.primaryColor};
     font-family: Messina Sans Mono;
-    font-size: 16px;
+    font-size: ${({ theme }) => theme.fontSize.primary}px;
     font-weight: 400;
     line-height: 1.19;
     text-align: justify;
@@ -204,10 +204,10 @@ export const Button = styled.button`
   border-radius: 8px;
   border: none;
   backdrop-filter: blur(12px);
-  background-color: rgba(30, 30, 30, 0.1);
+  background-color: ${({ theme }) => theme.colors.secondaryBlur};
   color: ${({ theme }) => theme.colors.primaryColor};
   font-family: Right Grotesk;
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: 900;
   line-height: 1.19;
   transition: color ${({ theme }) => theme.transitionDurationAndFunc};

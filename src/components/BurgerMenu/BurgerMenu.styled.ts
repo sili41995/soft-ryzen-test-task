@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { IStyledProps } from './BurgerMenu.types';
+import { theme } from '@/constants';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -76,7 +77,7 @@ export const Button = styled.button<IStyledProps>`
   background-color: transparent;
   color: ${({ theme }) => theme.colors.white};
   font-family: Messina Sans Mono;
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.fontSize.other}px;
   font-weight: 600;
   line-height: 1.21;
   text-transform: uppercase;
@@ -85,11 +86,13 @@ export const Button = styled.button<IStyledProps>`
     width: 48px;
     backdrop-filter: blur(12px);
     background-color: ${({ scrollingOccurred }) =>
-      scrollingOccurred ? 'rgba(255, 255, 255, 0.1)' : 'rgba(30, 30, 30, 0.1)'};
+      scrollingOccurred
+        ? theme.colors.primaryBlur
+        : theme.colors.secondaryBlur};
     color: ${({ theme, scrollingOccurred }) =>
       scrollingOccurred ? theme.colors.white : theme.colors.primaryColor};
     font-family: Messina Sans Mono;
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.fontSize.secondary}px;
     font-weight: 600;
     line-height: 1.17;
     text-transform: uppercase;
@@ -101,7 +104,7 @@ export const Button = styled.button<IStyledProps>`
 
   @media screen and (min-width: 1280px) {
     width: 80px;
-    font-size: 16px;
+    font-size: ${({ theme }) => theme.fontSize.primary}px;
     line-height: 1.19;
   }
 
@@ -115,7 +118,7 @@ export const Button = styled.button<IStyledProps>`
 export const Copyright = styled.p`
   color: ${({ theme }) => theme.colors.white};
   font-family: Messina Sans Mono;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.secondary}px;
   font-weight: 400;
   line-height: 1.17;
   text-align: center;

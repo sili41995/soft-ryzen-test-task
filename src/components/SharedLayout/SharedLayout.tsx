@@ -1,24 +1,13 @@
-import { FC, Suspense, useRef } from 'react';
+import { FC, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Loader from '@/components/Loader';
-import { Copyright, Footer, Main } from './SharedLayout.styled';
 import Container from '@/components/Container';
 import Header from '@/components/Header';
-import { ISectionRefs } from '@/types/types';
+import { useSectionRefs } from '@/hooks';
+import { Copyright, Footer, Main } from './SharedLayout.styled';
 
 const SharedLayout: FC = () => {
-  const contactUsSectionRef = useRef<HTMLElement>(null);
-  const artsSectionRef = useRef<HTMLElement>(null);
-  const faqSectionRef = useRef<HTMLElement>(null);
-  const mindMapSectionRef = useRef<HTMLElement>(null);
-  const aboutSectionRef = useRef<HTMLElement>(null);
-  const sectionRefs: ISectionRefs = {
-    contactUsSectionRef,
-    artsSectionRef,
-    faqSectionRef,
-    mindMapSectionRef,
-    aboutSectionRef,
-  };
+  const sectionRefs = useSectionRefs();
 
   return (
     <>

@@ -1,6 +1,11 @@
 import { FC } from 'react';
+import Arrow from '@/icons/up-right-arrow.svg?react';
 import SectionTitle from '@/components/SectionTitle';
 import Slider from '@/components/Slider';
+import CardsList from '@/components/CardsList';
+import Container from '@/components/Container';
+import { ClassNames, mindMapSectionCards } from '@/constants';
+import { IProps } from './MindMapSection.types';
 import {
   Card,
   CardText,
@@ -8,11 +13,6 @@ import {
   Link,
   Section,
 } from './MindMapSection.styled';
-import Arrow from '@/icons/up-right-arrow.svg?react';
-import CardsList from '@/components/CardsList';
-import { ClassNames, Sections, mindMapSectionCards } from '@/constants';
-import Container from '@/components/Container';
-import { IProps } from './MindMapSection.types';
 
 const MindMapSection: FC<IProps> = ({ sectionRef }) => {
   const cards = [
@@ -41,7 +41,7 @@ const MindMapSection: FC<IProps> = ({ sectionRef }) => {
   ];
 
   return (
-    <Section id={Sections.mMap} ref={sectionRef}>
+    <Section ref={sectionRef}>
       <Container>
         <SectionTitle title='MIND map' />
         <Slider cards={cards} slidesPerView={1} className={ClassNames.slider} />
