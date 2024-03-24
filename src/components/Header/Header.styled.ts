@@ -19,10 +19,10 @@ export const StyledHeader = styled.header`
 export const Container = styled.div<IStyledProps>`
   position: relative;
   max-width: ${({ theme }) => 328 + theme.padding.mobileHeader * 2}px;
-  padding-left: ${({ theme }) => theme.spacing(2)};
-  padding-right: ${({ theme }) => theme.spacing(2)};
   margin-left: auto;
   margin-right: auto;
+  padding-left: ${({ theme }) => theme.padding.mobileHeader}px;
+  padding-right: ${({ theme }) => theme.padding.mobileHeader}px;
 
   @media screen and (min-width: 768px) {
     max-width: ${({ theme }) => 712 + theme.padding.tabletHeader * 2}px;
@@ -40,7 +40,6 @@ export const Container = styled.div<IStyledProps>`
 export const Nav = styled.nav`
   position: absolute;
   top: 8px;
-  left: 0;
 
   & > a {
     & > svg {
