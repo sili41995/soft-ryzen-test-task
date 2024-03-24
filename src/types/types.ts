@@ -1,5 +1,5 @@
 import { PagePaths, Sections } from '@/constants';
-import { FunctionComponent, MouseEvent, SVGProps } from 'react';
+import { FunctionComponent, MouseEvent, RefObject, SVGProps } from 'react';
 
 export interface IFaqSectionCard {
   title: string;
@@ -43,3 +43,18 @@ export interface IAnchorLink {
 }
 
 export type AnchorLinks = Readonly<IAnchorLink[]>;
+
+export interface ISectionRefs {
+  contactUsSectionRef: RefObject<HTMLElement>;
+  artsSectionRef: RefObject<HTMLElement>;
+  faqSectionRef: RefObject<HTMLElement>;
+  mindMapSectionRef: RefObject<HTMLElement>;
+  aboutSectionRef: RefObject<HTMLElement>;
+}
+
+export interface IBurgerMenuControl {
+  title: Sections;
+  onClick: (e: BtnClickEvent) => void;
+}
+
+export type BurgerMenuControls = Readonly<IBurgerMenuControl[]>;

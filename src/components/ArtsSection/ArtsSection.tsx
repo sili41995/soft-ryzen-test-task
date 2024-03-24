@@ -5,14 +5,15 @@ import Slider from '@/components/Slider';
 import { ClassNames, Sections, artsSectionCards } from '@/constants';
 import { Image, Section } from './ArtsSection.styles';
 import Container from '@/components/Container';
+import { IProps } from './ArtsSection.types';
 
-const ArtsSection: FC = () => {
+const ArtsSection: FC<IProps> = ({ sectionRef }) => {
   const cards = artsSectionCards.map((avatar) => (
     <Image src={avatar} alt='card avatar' />
   ));
 
   return (
-    <Section id={Sections.arts}>
+    <Section id={Sections.arts} ref={sectionRef}>
       <Container>
         <HiddenSectionTitle title='Arts' />
         <FakeSectionTitle title='COLLECTION' />

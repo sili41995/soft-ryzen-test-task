@@ -18,9 +18,10 @@ import desktopImg from '@/images/storySection/desktopBgImage.png';
 import Container from '@/components/Container';
 import Banner from '@/components/Banner';
 import { Sections } from '@/constants';
+import { IProps } from './AboutSection.types';
 
-const AboutSection: FC = () => (
-  <Section id={Sections.about}>
+const AboutSection: FC<IProps> = ({ sectionRef }) => (
+  <Section id={Sections.about} ref={sectionRef}>
     <Container>
       <ContentWrap
         mobileImg={mobileImg}

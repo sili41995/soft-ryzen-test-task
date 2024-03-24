@@ -1,4 +1,9 @@
-import { BtnClickEvent, NavLinks, AnchorLinks } from '@/types/types';
+import {
+  BtnClickEvent,
+  NavLinks,
+  AnchorLinks,
+  BurgerMenuControls,
+} from '@/types/types';
 
 export interface IProps {
   showBurgerMenu: boolean;
@@ -6,6 +11,7 @@ export interface IProps {
   navLinks: NavLinks;
   anchorLinks: AnchorLinks;
   scrollingOccurred: boolean;
+  burgerMenuControls: BurgerMenuControls;
   onAnchorLinkClick: () => void;
   onMenuBtnClick: (e: BtnClickEvent) => void;
   onBurgerMenuBtnClick: (e: BtnClickEvent) => void;

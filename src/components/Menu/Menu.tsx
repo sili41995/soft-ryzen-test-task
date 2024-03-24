@@ -14,13 +14,14 @@ const Menu: FC<IProps> = ({
   onAnchorLinkClick,
   showBurgerMenu,
   onBurgerMenuBtnClick,
+  burgerMenuControls,
 }) => {
   const menuBtnTitle = showMenu ? 'CLOSE' : 'MENU';
   const burgerMenuBtnTitle = showBurgerMenu ? 'CLOSE' : 'MENU';
 
   return (
     <Container>
-      {showBurgerMenu && <BurgerMenu />}
+      {showBurgerMenu && <BurgerMenu burgerMenuControls={burgerMenuControls} />}
       <ControlsWrap>
         <BurgerMenuBtn
           showBurgerMenu={showBurgerMenu}

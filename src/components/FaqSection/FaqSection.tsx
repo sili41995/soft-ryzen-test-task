@@ -4,10 +4,11 @@ import { Sections, faqSectionCards } from '@/constants';
 import FaqSectionList from '@/components/FaqSectionList';
 import { Section } from './FaqSection.styled';
 import Container from '@/components/Container';
+import { IProps } from './FaqSection.types';
 
-const FaqSection: FC = () => {
+const FaqSection: FC<IProps> = ({ sectionRef }) => {
   return (
-    <Section id={Sections.faq}>
+    <Section id={Sections.faq} ref={sectionRef}>
       <Container>
         <SectionTitle title='FAQ' />
         <FaqSectionList faqSectionCards={faqSectionCards} />
