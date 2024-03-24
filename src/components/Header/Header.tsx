@@ -8,13 +8,14 @@ import { makeBlur } from '@/utils';
 import Menu from '@/components/Menu';
 
 const Header: FC = () => {
-  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  const [showBurgerMenu, setShowBurgerMenu] = useState<boolean>(false);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
   const [scrollingOccurred, setScrollingOccurred] = useState<boolean>(false);
 
   useEffect(() => {
     const onScroll = () => {
       const offset = window.scrollY;
-      if (offset > 1) {
+      if (offset > 10) {
         setScrollingOccurred(true);
       } else {
         setScrollingOccurred(false);
@@ -28,12 +29,18 @@ const Header: FC = () => {
     };
   }, [scrollingOccurred]);
 
-  const toggleShowMobileMenu = () => {
-    setShowMobileMenu((prevState) => !prevState);
+  const onAnchorLinkClick = () => {
+    showMenu && setShowMenu(false);
+    showBurgerMenu && setShowBurgerMenu(false);
   };
 
   const onMenuBtnClick = (e: BtnClickEvent) => {
-    toggleShowMobileMenu();
+    setShowMenu((prevState) => !prevState);
+    makeBlur(e.currentTarget);
+  };
+
+  const onBurgerMenuBtnClick = (e: BtnClickEvent) => {
+    setShowBurgerMenu((prevState) => !prevState);
     makeBlur(e.currentTarget);
   };
 
@@ -49,11 +56,13 @@ const Header: FC = () => {
         )}
         <Menu
           anchorLinks={anchorLinks}
-          showMobileMenu={showMobileMenu}
-          onMenuBtnClick={onMenuBtnClick}
+          showMenu={showMenu}
           navLinks={navLinks}
           scrollingOccurred={scrollingOccurred}
-          onAnchorLinkClick={toggleShowMobileMenu}
+          showBurgerMenu={showBurgerMenu}
+          onMenuBtnClick={onMenuBtnClick}
+          onAnchorLinkClick={onAnchorLinkClick}
+          onBurgerMenuBtnClick={onBurgerMenuBtnClick}
         />
       </Container>
     </StyledHeader>

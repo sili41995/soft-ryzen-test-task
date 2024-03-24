@@ -1,15 +1,17 @@
 import { BtnClickEvent, NavLinks, AnchorLinks } from '@/types/types';
 
 export interface IProps {
-  onMenuBtnClick: (e: BtnClickEvent) => void;
-  showMobileMenu: boolean;
+  showBurgerMenu: boolean;
+  showMenu: boolean;
   navLinks: NavLinks;
-  scrollingOccurred: boolean;
   anchorLinks: AnchorLinks;
+  scrollingOccurred: boolean;
   onAnchorLinkClick: () => void;
+  onMenuBtnClick: (e: BtnClickEvent) => void;
+  onBurgerMenuBtnClick: (e: BtnClickEvent) => void;
 }
 
 export interface IStyledProps {
   scrollingOccurred: boolean;
-  showMobileMenu: boolean;
+  showMenu: boolean;
 }

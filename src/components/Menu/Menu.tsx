@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Container, MenuBtn, ControlsWrap } from './Menu.styled';
+import { Container, MenuBtn, ControlsWrap, BurgerMenuBtn } from './Menu.styled';
 import { IProps } from './Menu.types';
 import AnchorLinksList from '@/components/AnchorLinksList';
 import NavLinksList from '@/components/NavLinksList';
@@ -7,31 +7,45 @@ import NavLinksList from '@/components/NavLinksList';
 const Menu: FC<IProps> = ({
   scrollingOccurred,
   onMenuBtnClick,
-  showMobileMenu,
+  showMenu,
   navLinks,
   anchorLinks,
   onAnchorLinkClick,
+  showBurgerMenu,
+  onBurgerMenuBtnClick,
 }) => {
-  const menuBtnTitle = showMobileMenu ? 'CLOSE' : 'MENU';
+  const menuBtnTitle = showMenu ? 'CLOSE' : 'MENU';
+  const burgerMenuBtnTitle = showBurgerMenu ? 'CLOSE' : 'MENU';
 
   return (
     <Container>
-      {showMobileMenu && (
+      {showMenu && (
         <AnchorLinksList
           scrollingOccurred={scrollingOccurred}
           anchorLinks={anchorLinks}
           onAnchorLinkClick={onAnchorLinkClick}
         />
       )}
+      {showBurgerMenu && <div>burgerMenu</div>}
       <ControlsWrap>
+        <BurgerMenuBtn
+          onClick={onBurgerMenuBtnClick}
+          scrollingOccurred={scrollingOccurred}
+          showMenu={showBurgerMenu}
+        >
+          {burgerMenuBtnTitle}
+        </BurgerMenuBtn>
         <MenuBtn
           onClick={onMenuBtnClick}
           scrollingOccurred={scrollingOccurred}
-          showMobileMenu={showMobileMenu}
+          showMenu={showMenu}
         >
           {menuBtnTitle}
         </MenuBtn>
-        <NavLinksList navLinks={navLinks} scrollingOccurred />
+        <NavLinksList
+          navLinks={navLinks}
+          scrollingOccurred={scrollingOccurred}
+        />
       </ControlsWrap>
     </Container>
   );
