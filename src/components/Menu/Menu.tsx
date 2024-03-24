@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { Container, MenuBtn, ControlsWrap, BurgerMenuBtn } from './Menu.styled';
+import { MenuBtn, ControlsWrap, BurgerMenuBtn } from './Menu.styled';
 import { IProps } from './Menu.types';
 import AnchorLinksList from '@/components/AnchorLinksList';
 import NavLinksList from '@/components/NavLinksList';
+import BurgerMenu from '../BurgerMenu';
 
 const Menu: FC<IProps> = ({
   scrollingOccurred,
@@ -18,7 +19,7 @@ const Menu: FC<IProps> = ({
   const burgerMenuBtnTitle = showBurgerMenu ? 'CLOSE' : 'MENU';
 
   return (
-    <Container>
+    <>
       {showMenu && (
         <AnchorLinksList
           scrollingOccurred={scrollingOccurred}
@@ -26,7 +27,7 @@ const Menu: FC<IProps> = ({
           onAnchorLinkClick={onAnchorLinkClick}
         />
       )}
-      {showBurgerMenu && <div>burgerMenu</div>}
+      {showBurgerMenu && <BurgerMenu />}
       <ControlsWrap>
         <BurgerMenuBtn
           onClick={onBurgerMenuBtnClick}
@@ -47,7 +48,7 @@ const Menu: FC<IProps> = ({
           scrollingOccurred={scrollingOccurred}
         />
       </ControlsWrap>
-    </Container>
+    </>
   );
 };
 

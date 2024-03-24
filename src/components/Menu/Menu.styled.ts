@@ -1,11 +1,10 @@
 import styled from '@emotion/styled';
 import { IStyledProps } from './Menu.types';
 
-export const Container = styled.div`
-  display: flex;
-`;
-
 export const ControlsWrap = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
