@@ -15,3 +15,9 @@ export interface IStyledProps {
   scrollingOccurred: boolean;
   showMenu: boolean;
 }
+
+export interface IStyledBurgerMenuBtnProps {
+  scrollingOccurred: boolean;
+  showMenu: boolean;
+  showBurgerMenu: boolean;
+}

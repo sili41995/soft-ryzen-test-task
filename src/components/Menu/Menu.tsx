@@ -23,6 +23,7 @@ const Menu: FC<IProps> = ({
       {showBurgerMenu && <BurgerMenu />}
       <ControlsWrap>
         <BurgerMenuBtn
+          showBurgerMenu={showBurgerMenu}
           onClick={onBurgerMenuBtnClick}
           scrollingOccurred={scrollingOccurred}
           showMenu={showBurgerMenu}
@@ -46,6 +47,7 @@ const Menu: FC<IProps> = ({
         <NavLinksList
           navLinks={navLinks}
           scrollingOccurred={scrollingOccurred}
+          showBurgerMenu={showBurgerMenu}
         />
       </ControlsWrap>
     </Container>

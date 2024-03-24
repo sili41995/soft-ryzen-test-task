@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './Menu.types';
+import { IStyledBurgerMenuBtnProps, IStyledProps } from './Menu.types';
 
 export const Container = styled.div`
   position: relative;
@@ -18,17 +18,21 @@ export const ControlsWrap = styled.div`
   }
 `;
 
-export const BurgerMenuBtn = styled.button<IStyledProps>`
+export const BurgerMenuBtn = styled.button<IStyledBurgerMenuBtnProps>`
   width: 100%;
   height: 48px;
   border: none;
   padding: 0;
   backdrop-filter: blur(12px);
   border-radius: 8px;
-  background-color: ${({ scrollingOccurred }) =>
-    scrollingOccurred ? 'rgba(255, 255, 255, 0.1)' : 'rgba(30, 30, 30, 0.1)'};
-  color: ${({ theme, scrollingOccurred }) =>
-    scrollingOccurred ? theme.colors.white : theme.colors.primaryColor};
+  background-color: ${({ scrollingOccurred, showBurgerMenu }) =>
+    scrollingOccurred || showBurgerMenu
+      ? 'rgba(255, 255, 255, 0.1)'
+      : 'rgba(30, 30, 30, 0.1)'};
+  color: ${({ theme, scrollingOccurred, showBurgerMenu }) =>
+    scrollingOccurred || showBurgerMenu
+      ? theme.colors.white
+      : theme.colors.primaryColor};
   font-family: Messina Sans Mono;
   font-size: 12px;
   font-weight: 600;
@@ -39,8 +43,10 @@ export const BurgerMenuBtn = styled.button<IStyledProps>`
     text-decoration-color ${({ theme }) => theme.transitionDurationAndFunc};
 
   &:is(:hover, :focus) {
-    color: ${({ theme, scrollingOccurred }) =>
-      scrollingOccurred ? theme.colors.accent : theme.colors.white};
+    color: ${({ theme, scrollingOccurred, showBurgerMenu }) =>
+      scrollingOccurred || showBurgerMenu
+        ? theme.colors.accent
+        : theme.colors.white};
     text-decoration-color: currentColor;
   }
 

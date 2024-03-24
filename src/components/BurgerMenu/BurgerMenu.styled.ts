@@ -6,5 +6,9 @@ export const Container = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: pink;
+  background-color: ${({ theme }) => theme.colors.body};
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;

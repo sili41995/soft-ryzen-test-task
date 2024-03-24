@@ -31,7 +31,7 @@ const theme: ITheme = {
   colors: {
     primaryColor: '#1e1e1e',
     accent: '#DC3B5A',
-    body: '#171717',
+    body: '#181818',
     white: '#FFFFFF',
   },
   // fontWeight: {

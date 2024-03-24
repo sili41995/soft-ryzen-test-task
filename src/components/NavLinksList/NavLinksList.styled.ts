@@ -17,29 +17,41 @@ export const ListItem = styled.li<IStyledProps>`
     padding: ${({ theme }) => theme.spacing(4)};
     border-radius: 8px;
     backdrop-filter: blur(12px);
-    background-color: ${({ scrollingOccurred }) =>
-      scrollingOccurred ? 'rgba(255, 255, 255, 0.1)' : 'rgba(30, 30, 30, 0.1)'};
+    background-color: ${({ scrollingOccurred, showBurgerMenu }) =>
+      scrollingOccurred || showBurgerMenu
+        ? 'rgba(255, 255, 255, 0.1)'
+        : 'rgba(30, 30, 30, 0.1)'};
 
     & > svg {
       display: block;
       width: 16px;
       height: 16px;
-      fill: ${({ theme, scrollingOccurred }) =>
-        scrollingOccurred ? theme.colors.white : theme.colors.primaryColor};
+      fill: ${({ theme, scrollingOccurred, showBurgerMenu }) =>
+        scrollingOccurred || showBurgerMenu
+          ? theme.colors.white
+          : theme.colors.primaryColor};
       transition: fill ${({ theme }) => theme.transitionDurationAndFunc};
 
       @media screen and (min-width: 768px) {
         width: 24px;
         height: 24px;
+        fill: ${({ theme, scrollingOccurred }) =>
+          scrollingOccurred ? theme.colors.white : theme.colors.primaryColor};
       }
     }
 
     &:is(:hover, :focus) svg {
-      fill: ${({ theme, scrollingOccurred }) =>
-        scrollingOccurred ? theme.colors.accent : theme.colors.white};
+      fill: ${({ theme, scrollingOccurred, showBurgerMenu }) =>
+        scrollingOccurred || showBurgerMenu
+          ? theme.colors.accent
+          : theme.colors.white};
     }
 
     @media screen and (min-width: 768px) {
+      background-color: ${({ scrollingOccurred }) =>
+        scrollingOccurred
+          ? 'rgba(255, 255, 255, 0.1)'
+          : 'rgba(30, 30, 30, 0.1)'};
       padding: ${({ theme }) => theme.spacing(3)};
       border-radius: 12px;
     }
