@@ -22,6 +22,13 @@ export const ListItem = styled.li<IStyledProps>`
         ? 'rgba(255, 255, 255, 0.1)'
         : 'rgba(30, 30, 30, 0.1)'};
 
+    @media screen and (min-width: 768px) {
+      background-color: ${({ scrollingOccurred }) =>
+        scrollingOccurred
+          ? 'rgba(255, 255, 255, 0.1)'
+          : 'rgba(30, 30, 30, 0.1)'};
+    }
+
     & > svg {
       display: block;
       width: 16px;
@@ -45,6 +52,11 @@ export const ListItem = styled.li<IStyledProps>`
         scrollingOccurred || showBurgerMenu
           ? theme.colors.accent
           : theme.colors.white};
+
+      @media screen and (min-width: 768px) {
+        fill: ${({ theme, scrollingOccurred }) =>
+          scrollingOccurred ? theme.colors.accent : theme.colors.white};
+      }
     }
 
     @media screen and (min-width: 768px) {

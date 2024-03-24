@@ -9,7 +9,7 @@ import {
 } from './BurgerMenu.styled';
 import { IProps } from './BurgerMenu.types';
 
-const BurgerMenu: FC<IProps> = ({ burgerMenuControls }) => {
+const BurgerMenu: FC<IProps> = ({ burgerMenuControls, scrollingOccurred }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
@@ -18,13 +18,21 @@ const BurgerMenu: FC<IProps> = ({ burgerMenuControls }) => {
     };
   }, []);
 
+  useEffect(() => {
+    console.log(scrollingOccurred);
+  });
+
   return (
     <Backdrop>
       <Container>
         <List>
           {burgerMenuControls.map(({ onClick, title }) => (
             <ListItem key={title}>
-              <Button type='button' onClick={onClick}>
+              <Button
+                type='button'
+                onClick={onClick}
+                scrollingOccurred={scrollingOccurred}
+              >
                 {title}
               </Button>
             </ListItem>

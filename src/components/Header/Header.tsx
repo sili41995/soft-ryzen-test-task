@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { Container, Nav, StyledHeader } from './Header.styled';
 import { Link } from 'react-router-dom';
-import { PagePaths, navLinks, anchorLinks, Sections } from '@/constants';
+import { PagePaths, navLinks, Sections } from '@/constants';
 import Logo from '@/icons/logo.svg?react';
 import { BtnClickEvent, BurgerMenuControls } from '@/types/types';
 import { makeBlur, smoothScroll } from '@/utils';
@@ -10,7 +10,6 @@ import { IProps } from './Header.types';
 
 const Header: FC<IProps> = ({ sectionRefs }) => {
   const [showBurgerMenu, setShowBurgerMenu] = useState<boolean>(false);
-  const [showMenu, setShowMenu] = useState<boolean>(false);
   const [scrollingOccurred, setScrollingOccurred] = useState<boolean>(false);
   const {
     aboutSectionRef,
@@ -36,16 +35,6 @@ const Header: FC<IProps> = ({ sectionRefs }) => {
       removeEventListener('scroll', onScroll);
     };
   }, [scrollingOccurred]);
-
-  const onAnchorLinkClick = () => {
-    showMenu && setShowMenu(false);
-    showBurgerMenu && setShowBurgerMenu(false);
-  };
-
-  const onMenuBtnClick = (e: BtnClickEvent) => {
-    setShowMenu((prevState) => !prevState);
-    makeBlur(e.currentTarget);
-  };
 
   const onBurgerMenuBtnClick = (e: BtnClickEvent) => {
     setShowBurgerMenu((prevState) => !prevState);
@@ -101,13 +90,9 @@ const Header: FC<IProps> = ({ sectionRefs }) => {
           </Nav>
         )}
         <Menu
-          anchorLinks={anchorLinks}
-          showMenu={showMenu}
           navLinks={navLinks}
           scrollingOccurred={scrollingOccurred}
           showBurgerMenu={showBurgerMenu}
-          onMenuBtnClick={onMenuBtnClick}
-          onAnchorLinkClick={onAnchorLinkClick}
           onBurgerMenuBtnClick={onBurgerMenuBtnClick}
           burgerMenuControls={burgerMenuControls}
         />
