@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import { IStyledProps } from './Menu.types';
 
+export const Container = styled.div`
+  position: relative;
+`;
+
 export const ControlsWrap = styled.div`
   position: absolute;
   top: 0;

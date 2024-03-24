@@ -5,6 +5,10 @@ export const List = styled.ul`
   display: none;
 
   @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
     display: flex;
     height: auto;
   }

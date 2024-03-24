@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { MenuBtn, ControlsWrap, BurgerMenuBtn } from './Menu.styled';
+import { Container, MenuBtn, ControlsWrap, BurgerMenuBtn } from './Menu.styled';
 import { IProps } from './Menu.types';
 import AnchorLinksList from '@/components/AnchorLinksList';
 import NavLinksList from '@/components/NavLinksList';
@@ -19,14 +19,7 @@ const Menu: FC<IProps> = ({
   const burgerMenuBtnTitle = showBurgerMenu ? 'CLOSE' : 'MENU';
 
   return (
-    <>
-      {showMenu && (
-        <AnchorLinksList
-          scrollingOccurred={scrollingOccurred}
-          anchorLinks={anchorLinks}
-          onAnchorLinkClick={onAnchorLinkClick}
-        />
-      )}
+    <Container>
       {showBurgerMenu && <BurgerMenu />}
       <ControlsWrap>
         <BurgerMenuBtn
@@ -43,12 +36,19 @@ const Menu: FC<IProps> = ({
         >
           {menuBtnTitle}
         </MenuBtn>
+        {showMenu && (
+          <AnchorLinksList
+            scrollingOccurred={scrollingOccurred}
+            anchorLinks={anchorLinks}
+            onAnchorLinkClick={onAnchorLinkClick}
+          />
+        )}
         <NavLinksList
           navLinks={navLinks}
           scrollingOccurred={scrollingOccurred}
         />
       </ControlsWrap>
-    </>
+    </Container>
   );
 };
 
