@@ -49,5 +49,11 @@ export const Button = styled.button`
 `;
 
 export const Copyright = styled.p`
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
+  font-family: Messina Sans Mono;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  text-align: center;
+  text-transform: uppercase;
 `;
