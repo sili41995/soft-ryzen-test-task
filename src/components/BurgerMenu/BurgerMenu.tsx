@@ -1,4 +1,5 @@
 import { FC, useEffect } from 'react';
+import { AriaLabels } from '@/constants';
 import { IProps } from './BurgerMenu.types';
 import {
   Backdrop,
@@ -28,6 +29,7 @@ const BurgerMenu: FC<IProps> = ({ burgerMenuControls, scrollingOccurred }) => {
                 type='button'
                 onClick={onClick}
                 scrollingOccurred={scrollingOccurred}
+                aria-label={`${AriaLabels.sectionBtn} ${title}`}
               >
                 {title}
               </Button>

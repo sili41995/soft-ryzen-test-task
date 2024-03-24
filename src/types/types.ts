@@ -1,6 +1,6 @@
 import { FunctionComponent, MouseEvent, RefObject, SVGProps } from 'react';
 import { UseFormHandleSubmit, UseFormRegister } from 'react-hook-form';
-import { PagePaths, Sections } from '@/constants';
+import { AriaLabels, PagePaths, Sections } from '@/constants';
 
 export interface IFaqSectionCard {
   title: string;
@@ -34,6 +34,7 @@ export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 export interface INavLink {
   path: PagePaths;
   icon: FunctionComponent<SVGProps<SVGSVGElement>>;
+  ariaLabel: AriaLabels;
 }
 
 export type NavLinks = Readonly<INavLink[]>;

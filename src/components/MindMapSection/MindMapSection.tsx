@@ -4,7 +4,7 @@ import SectionTitle from '@/components/SectionTitle';
 import Slider from '@/components/Slider';
 import CardsList from '@/components/CardsList';
 import Container from '@/components/Container';
-import { ClassNames, mindMapSectionCards } from '@/constants';
+import { AriaLabels, ClassNames, mindMapSectionCards } from '@/constants';
 import { IProps } from './MindMapSection.types';
 import {
   Card,
@@ -26,6 +26,7 @@ const MindMapSection: FC<IProps> = ({ sectionRef }) => {
       href='https://github.com/sili41995'
       target='_blank'
       rel='noreferrer noopener'
+      aria-label={AriaLabels.learnMore}
     >
       <Card>
         <Arrow />

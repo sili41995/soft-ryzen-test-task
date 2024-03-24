@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import NavLinksList from '@/components/NavLinksList';
 import BurgerMenu from '@/components/BurgerMenu';
+import { AriaLabels } from '@/constants';
 import { IProps } from './Menu.types';
 import { Container, ControlsWrap, BurgerMenuBtn } from './Menu.styled';
 
@@ -24,6 +25,7 @@ const Menu: FC<IProps> = ({
         showBurgerMenu={showBurgerMenu}
         onClick={onBurgerMenuBtnClick}
         scrollingOccurred={scrollingOccurred}
+        aria-label={AriaLabels.burgerMenuBtn}
       >
         {burgerMenuBtnTitle}
       </BurgerMenuBtn>

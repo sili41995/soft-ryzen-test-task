@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '@/icons/logo.svg?react';
-import { PagePaths, navLinks } from '@/constants';
+import { AriaLabels, PagePaths, navLinks } from '@/constants';
 import Menu from '@/components/Menu';
 import { useHeader } from '@/hooks';
 import { IProps } from './Header.types';
@@ -21,7 +21,7 @@ const Header: FC<IProps> = ({ sectionRefs }) => {
       <Container scrollingOccurred={scrollingOccurred}>
         {!scrollingOccurred && (
           <Nav>
-            <Link to={PagePaths.homePath}>
+            <Link to={PagePaths.homePath} aria-label={AriaLabels.logoLink}>
               <Logo />
             </Link>
           </Nav>

@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { AriaLabels } from '@/constants';
 import { IProps } from './FaqSectionList.types';
 import {
   Card,
@@ -26,7 +27,11 @@ const FaqSectionList: FC<IProps> = ({ faqSectionCards }) => {
 
         return (
           <ListItem key={index}>
-            <Card isActiveCard={isActiveCard} onClick={onCardClick}>
+            <Card
+              isActiveCard={isActiveCard}
+              onClick={onCardClick}
+              aria-label={AriaLabels.cardBtm}
+            >
               {isActiveCard && <Image src={avatar} alt='card avatar' />}
               <Number isActiveCard={isActiveCard}>{cardNumber}</Number>
               <TitleWrap>

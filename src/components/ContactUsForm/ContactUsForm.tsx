@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { regExp } from '@/constants';
+import { AriaLabels, regExp } from '@/constants';
 import Discord from '@/icons/discord.svg?react';
 import Wallet from '@/icons/wallet.svg?react';
 import Input from '@/components/Input';
@@ -50,7 +50,11 @@ const ContactUsForm: FC = () => {
           }),
         }}
       />
-      <SubmitFormBtn type='submit' onClick={onSubmitBtnClick}>
+      <SubmitFormBtn
+        type='submit'
+        onClick={onSubmitBtnClick}
+        aria-label={AriaLabels.submitBtn}
+      >
         {showDefaultBtnTitle && 'MINT'}
         {isSubmitSuccessful && 'MINTED'}
         {showErrorBtnTittle && 'ERROR'}

@@ -19,6 +19,7 @@ import {
   TitleAccent,
   Warning,
 } from './HeroSection.styled';
+import { AriaLabels } from '@/constants';
 
 const HeroSection: FC<IProps> = ({ onMeetApesBtnClick }) => (
   <Section>
@@ -35,7 +36,11 @@ const HeroSection: FC<IProps> = ({ onMeetApesBtnClick }) => (
         <TextWrap>
           <Warning>Apes aRe eveRywhere</Warning>
           <DescriptionWrap>
-            <Button type='button' onClick={onMeetApesBtnClick}>
+            <Button
+              type='button'
+              onClick={onMeetApesBtnClick}
+              aria-label={AriaLabels.meetApesBtn}
+            >
               MEET APES
             </Button>
             <Description>

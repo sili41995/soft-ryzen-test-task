@@ -9,11 +9,12 @@ const NavLinksList: FC<IProps> = ({
   showBurgerMenu,
 }) => (
   <List>
-    {navLinks.map(({ icon: Icon, path }, index) => (
+    {navLinks.map(({ icon: Icon, path, ariaLabel }, index) => (
       <ListItem
         key={index}
         scrollingOccurred={scrollingOccurred}
         showBurgerMenu={showBurgerMenu}
+        aria-label={ariaLabel}
       >
         <Link to={path}>
           <Icon />
